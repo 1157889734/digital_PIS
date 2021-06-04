@@ -1,0 +1,677 @@
+Component: ARM Compiler 5.06 update 6 (build 750) Tool: armlink [4d35ed]
+
+==============================================================================
+
+Section Cross References
+
+    main.o(.text) refers to flash_if.o(.text) for Check_And_RunAPP
+    main.o(.text) refers to mymiscfunc.o(.text) for Delay
+    main.o(.text) refers to myboard.o(.text) for RCC_Configuration
+    main.o(.text) refers to mytimer.o(.text) for SysTick_Init
+    main.o(.text) refers to p_sys.o(.text) for feed_dog
+    main.o(.text) refers to myapp.o(.text) for AppInit
+    main.o(.text) refers to mystorage.o(.text) for StorageInit
+    main.o(.text) refers to mynet.o(.text) for NetInit
+    main.o(.text) refers to process_ledscreen.o(.text) for ledscreen_init
+    main.o(.text) refers to mylwip.o(.text) for LwipProcess
+    main.o(.text) refers to process_net.o(.text) for udp_CtrlMsg_send_process
+    main.o(.text) refers to mycommander.o(.text) for send_downloadReq
+    main.o(.text) refers to tftp_cli.o(.text) for tftp_cli_timeout_process
+    main.o(.text) refers to main.o(.data) for timer_3
+    main.o(.text) refers to process_net.o(.data) for Hled_run_status
+    main.o(.text) refers to mytimer.o(.data) for MyTmCnt10
+    p_sys.o(.text) refers to stm32f2xx_gpio.o(.text) for GPIO_Init
+    p_sys.o(.text) refers to p_sys.o(.data) for tmp
+    p_sys.o(.text) refers to process_ledscreen.o(.data) for roll_speed
+    p_sys.o(.text) refers to main.o(.data) for timer2_flag
+    hc595.o(.text) refers to stm32f2xx_gpio.o(.text) for GPIO_SetBits
+    hc595.o(.text) refers to process_ledscreen.o(.text) for clr_led_buf
+    hc595.o(.text) refers to mymiscfunc.o(.text) for Delay
+    hc595.o(.text) refers to hc595.o(.constdata) for led_row_select
+    hc595.o(.text) refers to hc595.o(.data) for line_No
+    hc595.o(.text) refers to hc595.o(.bss) for green_CN
+    hc595.o(.text) refers to process_ledscreen.o(.data) for brightness
+    hc595.o(.text) refers to main.o(.data) for refresh_flag
+    myapp.o(.text) refers to bsp_dev_id.o(.text) for get_devecie_id
+    myapp.o(.text) refers to mystorage.o(.text) for StorageInfoSave
+    myapp.o(.text) refers to mycommander.o(.text) for CommanderSendDeviceId
+    myapp.o(.text) refers to myapp.o(.data) for AppStartTimer
+    myaudio.o(.text) refers to myi2s.o(.text) for L3Uda1341SetVolume
+    myaudio.o(.text) refers to mystorage.o(.text) for StorageInfoSave
+    myaudio.o(.text) refers to mymiscfunc.o(.text) for Delay
+    myaudio.o(.text) refers to myaudio.o(.data) for AudioVolume
+    myaudio.o(.text) refers to myaudio.o(.bss) for ListenLeftFifo
+    myaudio.o(.text) refers to myi2s.o(.data) for DmaPlayFlag
+    myboard.o(.text) refers to stm32f2xx_rcc.o(.text) for RCC_AHB1PeriphClockCmd
+    myboard.o(.text) refers to stm32f2xx_gpio.o(.text) for GPIO_Init
+    myboard.o(.text) refers to p_sys.o(.text) for watchdog_GPIO_config
+    myboard.o(.text) refers to bsp_dev_id.o(.text) for Device_id_GPIO_config
+    myboard.o(.text) refers to hc595.o(.text) for HC595_GPIO_config
+    mycommander.o(.text) refers to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
+    mycommander.o(.text) refers to _printf_d.o(.ARM.Collect$$_printf_percent$$00000009) for _printf_d
+    mycommander.o(.text) refers to _printf_dec.o(.text) for _printf_int_dec
+    mycommander.o(.text) refers to _printf_pad.o(.text) for _printf_pre_padding
+    mycommander.o(.text) refers to _printf_x.o(.ARM.Collect$$_printf_percent$$0000000C) for _printf_x
+    mycommander.o(.text) refers to _printf_hex_int.o(.text) for _printf_longlong_hex
+    mycommander.o(.text) refers to strlen.o(.text) for strlen
+    mycommander.o(.text) refers to mylwip.o(.text) for UdpCommanderSend
+    mycommander.o(.text) refers to rt_memclr.o(.text) for __aeabi_memclr
+    mycommander.o(.text) refers to noretval__2sprintf.o(.text) for __2sprintf
+    mycommander.o(.text) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    mycommander.o(.text) refers to rt_memclr_w.o(.text) for __aeabi_memclr4
+    mycommander.o(.text) refers to strcat.o(.text) for strcat
+    mycommander.o(.text) refers to mymiscfunc.o(.text) for LineToWords
+    mycommander.o(.text) refers to strcmpv7m.o(.text) for strcmp
+    mycommander.o(.text) refers to mynet.o(.text) for NetSetLocalIp4
+    mycommander.o(.text) refers to myapp.o(.text) for SetDeviceId
+    mycommander.o(.text) refers to myaudio.o(.text) for AudioSetVolume
+    mycommander.o(.text) refers to mycommander.o(.bss) for OutStr
+    mycommander.o(.text) refers to myapp.o(.data) for TrainId
+    mycommander.o(.text) refers to mynet.o(.data) for NetLocalIp
+    mycommander.o(.text) refers to mycommander.o(.conststring) for .conststring
+    mycommander.o(.text) refers to mycommander.o(.constdata) for .constdata
+    mycommander.o(.text) refers to process_ledscreen.o(.constdata) for software_version
+    myethernet.o(.text) refers to stm32f2xx_rcc.o(.text) for RCC_AHB1PeriphClockCmd
+    myethernet.o(.text) refers to stm32f2x7_eth.o(.text) for ETH_DeInit
+    myethernet.o(.text) refers to stm32f2xx_gpio.o(.text) for GPIO_Init
+    myethernet.o(.text) refers to stm32f2xx_syscfg.o(.text) for SYSCFG_ETH_MediaInterfaceConfig
+    myethernet.o(.text) refers to myethernet.o(.data) for EthInitStatus
+    myflash.o(.text) refers to stm32f2xx_flash.o(.text) for FLASH_Unlock
+    myflash.o(.text) refers to myflash.o(.data) for FlashPage1Addr
+    myflash.o(.text) refers to mystorage.o(.bss) for StorageInfo
+    myhttpd.o(.text) refers to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
+    myhttpd.o(.text) refers to _printf_s.o(.ARM.Collect$$_printf_percent$$00000014) for _printf_s
+    myhttpd.o(.text) refers to _printf_str.o(.text) for _printf_str
+    myhttpd.o(.text) refers to _printf_d.o(.ARM.Collect$$_printf_percent$$00000009) for _printf_d
+    myhttpd.o(.text) refers to _printf_dec.o(.text) for _printf_int_dec
+    myhttpd.o(.text) refers to _printf_pad.o(.text) for _printf_pre_padding
+    myhttpd.o(.text) refers to _printf_x.o(.ARM.Collect$$_printf_percent$$0000000C) for _printf_x
+    myhttpd.o(.text) refers to _printf_hex_int.o(.text) for _printf_longlong_hex
+    myhttpd.o(.text) refers to mem.o(.text) for mem_malloc
+    myhttpd.o(.text) refers to tcp.o(.text) for tcp_arg
+    myhttpd.o(.text) refers to tcp_out.o(.text) for tcp_write
+    myhttpd.o(.text) refers to strlen.o(.text) for strlen
+    myhttpd.o(.text) refers to memcmp.o(.text) for memcmp
+    myhttpd.o(.text) refers to rt_memclr_w.o(.text) for __aeabi_memclr4
+    myhttpd.o(.text) refers to noretval__2sprintf.o(.text) for __2sprintf
+    myhttpd.o(.text) refers to strcat.o(.text) for strcat
+    myhttpd.o(.text) refers to pbuf.o(.text) for pbuf_free
+    myhttpd.o(.text) refers to rt_memcpy_v6.o(.text) for __aeabi_memcpy
+    myhttpd.o(.text) refers to strncmp.o(.text) for strncmp
+    myhttpd.o(.text) refers to atoi.o(.text) for atoi
+    myhttpd.o(.text) refers to process_ledscreen.o(.constdata) for software_version
+    myhttpd.o(.text) refers to myhttpd.o(.data) for mode_description
+    myhttpd.o(.text) refers to myapp.o(.data) for DevId
+    myhttpd.o(.text) refers to myhttpd.o(.conststring) for .conststring
+    myhttpd.o(.text) refers to main.o(.data) for Debuger
+    myhttpd.o(.text) refers to myhttpd.o(.constdata) for head_buf
+    myhttpd.o(.text) refers to myhttpd.o(.bss) for str_tmp
+    myhttpd.o(.text) refers to tftp_cli.o(.text) for check_UDPpcb_tftp
+    myhttpd.o(.text) refers to h1_alloc.o(.text) for malloc
+    myhttpd.o(.text) refers to process_net.o(.text) for udpTest_send_process
+    myhttpd.o(.text) refers to h1_free.o(.text) for free
+    myhttpd.o(.text) refers to process_ledscreen.o(.text) for clr_led_buf
+    myhttpd.o(.text) refers to ip_addr.o(.constdata) for ip_addr_any
+    myhttpd.o(.data) refers to myhttpd.o(.conststring) for .conststring
+    myhttpd.o(.data) refers to myhttpd.o(.conststrlit) for .conststrlit
+    myi2c.o(.text) refers to stm32f2xx_i2c.o(.text) for I2C_Cmd
+    myi2s.o(.text) refers to stm32f2xx_rcc.o(.text) for RCC_APB1PeriphClockCmd
+    myi2s.o(.text) refers to stm32f2xx_spi.o(.text) for SPI_I2S_DeInit
+    myi2s.o(.text) refers to stm32f2xx_dma.o(.text) for DMA_Cmd
+    myi2s.o(.text) refers to misc.o(.text) for NVIC_Init
+    myi2s.o(.text) refers to mymiscfunc.o(.text) for IndexAdd1
+    myi2s.o(.text) refers to myboard.o(.text) for WriteL3Mode
+    myi2s.o(.text) refers to myi2s.o(.bss) for DmaPlayMem1
+    myi2s.o(.text) refers to myaudio.o(.data) for PlayRightConsumeIndex
+    myi2s.o(.text) refers to main.o(.data) for Debuger
+    myi2s.o(.text) refers to myi2s.o(.data) for DmaPlayFlag
+    mylwip.o(.text) refers to udp.o(.text) for udp_new
+    mylwip.o(.text) refers to mynet.o(.text) for NetPlayclkReceiveProcess
+    mylwip.o(.text) refers to pbuf.o(.text) for pbuf_free
+    mylwip.o(.text) refers to mycommander.o(.text) for CommanderReceive
+    mylwip.o(.text) refers to process_net.o(.text) for UdpTestReceiveProcess
+    mylwip.o(.text) refers to mem.o(.text) for mem_init
+    mylwip.o(.text) refers to memp.o(.text) for memp_init
+    mylwip.o(.text) refers to inet.o(.text) for htonl
+    mylwip.o(.text) refers to netif.o(.text) for netif_add
+    mylwip.o(.text) refers to ethernetif.o(.text) for ethernetif_input
+    mylwip.o(.text) refers to stm32f2x7_eth.o(.text) for ETH_CheckFrameReceived
+    mylwip.o(.text) refers to etharp.o(.text) for etharp_tmr
+    mylwip.o(.text) refers to mylwip.o(.data) for pUdpPlayclkSendPcb
+    mylwip.o(.text) refers to ip_addr.o(.constdata) for ip_addr_any
+    mylwip.o(.text) refers to mynet.o(.data) for NetLocalIp
+    mylwip.o(.text) refers to mylwip.o(.bss) for Netif
+    mymiscfunc.o(.text) refers to strlen.o(.text) for strlen
+    mymiscfunc.o(.text) refers to main.o(.data) for Debuger
+    mynet.o(.text) refers to mymiscfunc.o(.text) for Delay
+    mynet.o(.text) refers to mystorage.o(.text) for StorageInfoRead
+    mynet.o(.text) refers to myethernet.o(.text) for EthernetInit
+    mynet.o(.text) refers to mylwip.o(.text) for LwipInit
+    mynet.o(.text) refers to myprotocol.o(.text) for ProtocolInit
+    mynet.o(.text) refers to myhttpd.o(.text) for HttpdInit
+    mynet.o(.text) refers to process_ledscreen.o(.text) for turn_off_screen_clrbuf
+    mynet.o(.text) refers to process_net.o(.text) for udp_CtrlMsg_receive_process
+    mynet.o(.text) refers to myaudio.o(.text) for AudioSetVolume
+    mynet.o(.text) refers to mynet.o(.data) for NetLocalIp
+    mynet.o(.text) refers to myapp.o(.data) for DevId
+    mynet.o(.text) refers to mynet.o(.bss) for NetBuf
+    mynet.o(.text) refers to myaudio.o(.data) for PlayClockSendFlag
+    myprotocol.o(.text) refers to mynet.o(.text) for NetIp4toIp32
+    myprotocol.o(.text) refers to rt_memcpy_v6.o(.text) for __aeabi_memcpy
+    myprotocol.o(.text) refers to myapp.o(.data) for DevType
+    myprotocol.o(.text) refers to myprotocol.o(.data) for ProtocolLocalInfo
+    myprotocol.o(.text) refers to mynet.o(.data) for NetLocalIp
+    mystorage.o(.text) refers to myi2c.o(.text) for AT24C32_Init
+    mystorage.o(.text) refers to mymiscfunc.o(.text) for Delay
+    mystorage.o(.text) refers to mystorage.o(.data) for StorageInfoSaveFlag
+    mystorage.o(.text) refers to mynet.o(.data) for NetLocalIp
+    mystorage.o(.text) refers to mystorage.o(.bss) for StorageInfo
+    mystorage.o(.text) refers to myaudio.o(.data) for AudioVolume
+    mystorage.o(.text) refers to myapp.o(.data) for TrainId
+    myswitch.o(.text) refers to myi2c.o(.text) for I2cKsz8863Init
+    myswitch.o(.text) refers to mymiscfunc.o(.text) for Delay
+    mytimer.o(.text) refers to misc.o(.text) for SysTick_CLKSourceConfig
+    mytimer.o(.text) refers to stm32f2xx_rcc.o(.text) for RCC_GetClocksFreq
+    mytimer.o(.text) refers to p_sys.o(.text) for timer_isr_hook
+    mytimer.o(.text) refers to mynet.o(.text) for Net50ms
+    mytimer.o(.text) refers to mylwip.o(.text) for Lwip50ms
+    mytimer.o(.text) refers to mystorage.o(.text) for StorageInfoSaveProcess
+    mytimer.o(.text) refers to myboard.o(.text) for LED1Flash
+    mytimer.o(.text) refers to myapp.o(.text) for App1000ms
+    mytimer.o(.text) refers to mytimer.o(.data) for MyTmCnt10
+    mytimer.o(.text) refers to myaudio.o(.data) for AudioPlayInfo
+    stm32f2xx_it.o(.text) refers to process_ledscreen.o(.text) for turn_off_screen_clrbuf
+    stm32f2xx_it.o(.text) refers to mytimer.o(.text) for SysTick_Isr
+    stm32f2xx_it.o(.text) refers to myi2s.o(.text) for DmaListen_Isr
+    bsp_dev_id.o(.text) refers to stm32f2xx_gpio.o(.text) for GPIO_Init
+    bsp_dev_id.o(.text) refers to process_net.o(.text) for report_error
+    bsp_dev_id.o(.text) refers to p_sys.o(.text) for feed_dog
+    bsp_dev_id.o(.text) refers to myapp.o(.data) for DevId
+    startup_stm32f2xx.o(STACK) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup_stm32f2xx.o(HEAP) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup_stm32f2xx.o(RESET) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup_stm32f2xx.o(RESET) refers to startup_stm32f2xx.o(STACK) for __initial_sp
+    startup_stm32f2xx.o(RESET) refers to startup_stm32f2xx.o(.text) for Reset_Handler
+    startup_stm32f2xx.o(RESET) refers to stm32f2xx_it.o(.text) for NMI_Handler
+    startup_stm32f2xx.o(.text) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup_stm32f2xx.o(.text) refers to system_stm32f2xx.o(.text) for SystemInit
+    startup_stm32f2xx.o(.text) refers to __main.o(!!!main) for __main
+    startup_stm32f2xx.o(.text) refers to startup_stm32f2xx.o(HEAP) for Heap_Mem
+    startup_stm32f2xx.o(.text) refers to startup_stm32f2xx.o(STACK) for Stack_Mem
+    system_stm32f2xx.o(.text) refers to system_stm32f2xx.o(.data) for SystemCoreClock
+    stm32f2x7_eth.o(.text) refers to stm32f2xx_rcc.o(.text) for RCC_AHB1PeriphResetCmd
+    stm32f2x7_eth.o(.text) refers to stm32f2x7_eth.o(.data) for DMARxDescToGet
+    stm32f2x7_eth.o(.text) refers to stm32f2x7_eth.o(.bss) for RX_Frame_Descriptor
+    init.o(.text) refers to mem.o(.text) for mem_init
+    init.o(.text) refers to memp.o(.text) for memp_init
+    init.o(.text) refers to autoip.o(.text) for autoip_init
+    mem.o(.text) refers to rt_memclr.o(.text) for __aeabi_memclr
+    mem.o(.text) refers to mem.o(.data) for ram
+    mem.o(.text) refers to mem.o(.bss) for ram_heap
+    memp.o(.text) refers to memp.o(.bss) for memp_memory
+    memp.o(.text) refers to memp.o(.constdata) for memp_sizes
+    netif.o(.text) refers to tcp.o(.text) for tcp_abandon
+    netif.o(.text) refers to etharp.o(.text) for etharp_request
+    netif.o(.text) refers to tcp.o(.data) for tcp_active_pcbs
+    netif.o(.text) refers to netif.o(.data) for netifnum
+    pbuf.o(.text) refers to memp.o(.text) for memp_free
+    pbuf.o(.text) refers to mem.o(.text) for mem_free
+    pbuf.o(.text) refers to rt_memcpy_v6.o(.text) for __aeabi_memcpy
+    raw.o(.text) refers to inet.o(.text) for ntohs
+    raw.o(.text) refers to pbuf.o(.text) for pbuf_header
+    raw.o(.text) refers to ip.o(.text) for ip_route
+    raw.o(.text) refers to memp.o(.text) for memp_free
+    raw.o(.text) refers to rt_memclr_w.o(.text) for __aeabi_memclr4
+    raw.o(.text) refers to raw.o(.data) for raw_pcbs
+    tcp.o(.text) refers to pbuf.o(.text) for pbuf_free
+    tcp.o(.text) refers to memp.o(.text) for memp_free
+    tcp.o(.text) refers to tcp_out.o(.text) for tcp_zero_window_probe
+    tcp.o(.text) refers to tcp.o(.data) for tcp_ticks
+    tcp.o(.text) refers to tcp.o(.constdata) for tcp_persist_backoff
+    tcp.o(.text) refers to ip.o(.text) for ip_route
+    tcp.o(.text) refers to rt_memclr_w.o(.text) for __aeabi_memclr4
+    tcp.o(.data) refers to tcp.o(.conststring) for .conststring
+    tcp_in.o(.text) refers to tcp_out.o(.text) for tcp_rexmit_fast
+    tcp_in.o(.text) refers to pbuf.o(.text) for pbuf_clen
+    tcp_in.o(.text) refers to inet.o(.text) for ntohs
+    tcp_in.o(.text) refers to tcp.o(.text) for tcp_seg_free
+    tcp_in.o(.text) refers to tcp_in.o(.data) for flags
+    tcp_in.o(.text) refers to tcp.o(.data) for tcp_ticks
+    tcp_in.o(.text) refers to tcp_in.o(.bss) for inseg
+    tcp_in.o(.text) refers to ip_addr.o(.text) for ip_addr_isbroadcast
+    tcp_in.o(.text) refers to memp.o(.text) for memp_free
+    tcp_out.o(.text) refers to inet.o(.text) for htons
+    tcp_out.o(.text) refers to memp.o(.text) for memp_malloc
+    tcp_out.o(.text) refers to pbuf.o(.text) for pbuf_alloc
+    tcp_out.o(.text) refers to rt_memcpy_v6.o(.text) for __aeabi_memcpy
+    tcp_out.o(.text) refers to tcp.o(.text) for tcp_segs_free
+    tcp_out.o(.text) refers to ip.o(.text) for ip_output
+    tcp_out.o(.text) refers to tcp.o(.data) for tcp_ticks
+    tcp_out.o(.text) refers to tcp_in.o(.data) for tcp_input_pcb
+    udp.o(.text) refers to inet.o(.text) for ntohs
+    udp.o(.text) refers to pbuf.o(.text) for pbuf_header
+    udp.o(.text) refers to ip_addr.o(.text) for ip_addr_isbroadcast
+    udp.o(.text) refers to icmp.o(.text) for icmp_dest_unreach
+    udp.o(.text) refers to ip.o(.text) for ip_output_if
+    udp.o(.text) refers to memp.o(.text) for memp_free
+    udp.o(.text) refers to rt_memclr_w.o(.text) for __aeabi_memclr4
+    udp.o(.text) refers to udp.o(.data) for udp_pcbs
+    udp.o(.text) refers to ip_addr.o(.constdata) for ip_addr_any
+    autoip.o(.text) refers to inet.o(.text) for htonl
+    autoip.o(.text) refers to netif.o(.text) for netif_is_up
+    autoip.o(.text) refers to mem.o(.text) for mem_malloc
+    autoip.o(.text) refers to etharp.o(.text) for etharp_raw
+    autoip.o(.text) refers to memcmp.o(.text) for memcmp
+    autoip.o(.text) refers to etharp.o(.constdata) for ethzero
+    autoip.o(.text) refers to ip_addr.o(.constdata) for ip_addr_any
+    autoip.o(.text) refers to netif.o(.data) for netif_list
+    icmp.o(.text) refers to inet.o(.text) for ntohs
+    icmp.o(.text) refers to pbuf.o(.text) for pbuf_header
+    icmp.o(.text) refers to ip_addr.o(.text) for ip_addr_isbroadcast
+    icmp.o(.text) refers to inet_chksum.o(.text) for inet_chksum_pbuf
+    icmp.o(.text) refers to ip.o(.text) for ip_output_if
+    icmp.o(.text) refers to rt_memcpy_v6.o(.text) for __aeabi_memcpy
+    inet.o(.text) refers to inet.o(.bss) for str
+    inet_chksum.o(.text) refers to inet.o(.text) for htons
+    ip.o(.text) refers to netif.o(.text) for netif_is_up
+    ip.o(.text) refers to inet.o(.text) for ntohs
+    ip.o(.text) refers to pbuf.o(.text) for pbuf_free
+    ip.o(.text) refers to ip_addr.o(.text) for ip_addr_isbroadcast
+    ip.o(.text) refers to ip_frag.o(.text) for ip_reass
+    ip.o(.text) refers to raw.o(.text) for raw_input
+    ip.o(.text) refers to udp.o(.text) for udp_input
+    ip.o(.text) refers to tcp_in.o(.text) for tcp_input
+    ip.o(.text) refers to icmp.o(.text) for icmp_input
+    ip.o(.text) refers to netif.o(.data) for netif_list
+    ip.o(.text) refers to ip.o(.data) for current_netif
+    ip_frag.o(.text) refers to memp.o(.text) for memp_free
+    ip_frag.o(.text) refers to rt_memcpy_v6.o(.text) for __aeabi_memcpy
+    ip_frag.o(.text) refers to icmp.o(.text) for icmp_time_exceeded
+    ip_frag.o(.text) refers to pbuf.o(.text) for pbuf_clen
+    ip_frag.o(.text) refers to rt_memclr_w.o(.text) for __aeabi_memclr4
+    ip_frag.o(.text) refers to inet.o(.text) for ntohs
+    ip_frag.o(.text) refers to ip_frag.o(.data) for reassdatagrams
+    ip_frag.o(.text) refers to inet_chksum.o(.text) for inet_chksum
+    ip_frag.o(.text) refers to ip_frag.o(.bss) for buf
+    etharp.o(.text) refers to pbuf.o(.text) for pbuf_free
+    etharp.o(.text) refers to memp.o(.text) for memp_free
+    etharp.o(.text) refers to inet.o(.text) for htons
+    etharp.o(.text) refers to ip_addr.o(.text) for ip_addr_isbroadcast
+    etharp.o(.text) refers to etharp.o(.bss) for arp_table
+    etharp.o(.text) refers to etharp.o(.data) for etharp_cached_entry
+    etharp.o(.text) refers to autoip.o(.text) for autoip_arp_reply
+    etharp.o(.text) refers to ip.o(.text) for ip_input
+    etharp.o(.text) refers to etharp.o(.constdata) for ethbroadcast
+    ethernetif.o(.text) refers to stm32f2x7_eth.o(.text) for ETH_MACAddressConfig
+    ethernetif.o(.text) refers to rt_memcpy_v6.o(.text) for __aeabi_memcpy
+    ethernetif.o(.text) refers to pbuf.o(.text) for pbuf_alloc
+    ethernetif.o(.text) refers to mynet.o(.data) for NetLocalMac
+    ethernetif.o(.text) refers to stm32f2x7_eth.o(.bss) for Tx_Buff
+    ethernetif.o(.text) refers to stm32f2x7_eth.o(.data) for DMATxDescToSet
+    ethernetif.o(.text) refers to etharp.o(.text) for etharp_output
+    stm32f2xx_gpio.o(.text) refers to stm32f2xx_rcc.o(.text) for RCC_AHB1PeriphResetCmd
+    stm32f2xx_i2c.o(.text) refers to stm32f2xx_rcc.o(.text) for RCC_APB1PeriphResetCmd
+    stm32f2xx_pwr.o(.text) refers to stm32f2xx_rcc.o(.text) for RCC_APB1PeriphResetCmd
+    stm32f2xx_rcc.o(.text) refers to stm32f2xx_rcc.o(.data) for APBAHBPrescTable
+    stm32f2xx_spi.o(.text) refers to stm32f2xx_rcc.o(.text) for RCC_APB2PeriphResetCmd
+    stm32f2xx_syscfg.o(.text) refers to stm32f2xx_rcc.o(.text) for RCC_APB2PeriphResetCmd
+    stm32f2xx_tim.o(.text) refers to stm32f2xx_rcc.o(.text) for RCC_APB2PeriphResetCmd
+    stm32f2xx_usart.o(.text) refers to stm32f2xx_rcc.o(.text) for RCC_APB2PeriphResetCmd
+    process_net.o(.text) refers to mynet.o(.text) for NetIp4toIp32
+    process_net.o(.text) refers to mem_str.o(.text) for mem_cpy
+    process_net.o(.text) refers to mylwip.o(.text) for UdpControlSend
+    process_net.o(.text) refers to mymiscfunc.o(.text) for Delay
+    process_net.o(.text) refers to mystorage.o(.text) for StorageInfoSave
+    process_net.o(.text) refers to bsp_dev_id.o(.text) for check_devid
+    process_net.o(.text) refers to process_net.o(.data) for Hled_run_status
+    process_net.o(.text) refers to myapp.o(.data) for DevType
+    process_net.o(.text) refers to myprotocol.o(.data) for ProtocolLocalInfo
+    process_net.o(.text) refers to mynet.o(.data) for NetLocalIp
+    process_net.o(.text) refers to process_ledscreen.o(.constdata) for software_version
+    process_net.o(.text) refers to process_net.o(.bss) for pack_data
+    process_net.o(.text) refers to process_net.o(.constdata) for Evt_udp_CtrlMsg_send_Tbl_ledScreen
+    process_net.o(.text) refers to process_ledscreen.o(.text) for turn_off_screen
+    process_net.o(.text) refers to aeabi_memset.o(.text) for __aeabi_memset
+    process_net.o(.text) refers to process_ledscreen.o(.data) for roll_speed
+    process_net.o(.text) refers to rt_memcpy_v6.o(.text) for __aeabi_memcpy
+    process_net.o(.text) refers to memcmp.o(.text) for memcmp
+    process_net.o(.text) refers to myhttpd.o(.text) for set_run_iap_req
+    process_net.o(.text) refers to tftp_cli.o(.text) for tftp_cli_start
+    process_net.o(.text) refers to h1_alloc.o(.text) for malloc
+    process_net.o(.text) refers to h1_free.o(.text) for free
+    process_net.o(.constdata) refers to process_net.o(.text) for send_ProcessData_ledScreen
+    process_ledscreen.o(.text) refers to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
+    process_ledscreen.o(.text) refers to _printf_s.o(.ARM.Collect$$_printf_percent$$00000014) for _printf_s
+    process_ledscreen.o(.text) refers to _printf_str.o(.text) for _printf_str
+    process_ledscreen.o(.text) refers to _printf_d.o(.ARM.Collect$$_printf_percent$$00000009) for _printf_d
+    process_ledscreen.o(.text) refers to _printf_dec.o(.text) for _printf_int_dec
+    process_ledscreen.o(.text) refers to aeabi_memset.o(.text) for __aeabi_memset
+    process_ledscreen.o(.text) refers to rt_memcpy_v6.o(.text) for __aeabi_memcpy
+    process_ledscreen.o(.text) refers to rt_memclr_w.o(.text) for __aeabi_memclr4
+    process_ledscreen.o(.text) refers to noretval__2sprintf.o(.text) for __2sprintf
+    process_ledscreen.o(.text) refers to strcat.o(.text) for strcat
+    process_ledscreen.o(.text) refers to process_ledscreen.o(.data) for DISP_COL_TAIL
+    process_ledscreen.o(.text) refers to process_ledscreen.o(.bss) for red_tmp
+    process_ledscreen.o(.text) refers to hc595.o(.bss) for green_CN
+    process_ledscreen.o(.text) refers to process_ledscreen.o(.constdata) for ceshizhong
+    process_ledscreen.o(.text) refers to myprotocol.o(.data) for ProtocolLocalInfo
+    process_ledscreen.o(.text) refers to strlen.o(.text) for strlen
+    process_ledscreen.o(.text) refers to stm32f2xx_gpio.o(.text) for GPIO_ResetBits
+    process_ledscreen.o(.text) refers to process_net.o(.text) for clr_dispinfo
+    process_ledscreen.o(.text) refers to main.o(.data) for refresh_flag
+    process_ledscreen.o(.text) refers to process_net.o(.bss) for netCNDispInfo
+    process_ledscreen.o(.text) refers to memcmp.o(.text) for memcmp
+    process_ledscreen.o(.text) refers to hc595.o(.text) for Refresh_74HC595_status
+    process_ledscreen.o(.data) refers to process_ledscreen.o(.text) for callback_SCREEN_MODE_stationID_m1
+    flash_if.o(.text) refers to p_sys.o(.text) for feed_dog
+    flash_if.o(.text) refers to stm32f2xx_flash.o(.text) for FLASH_Unlock
+    flash_if.o(.text) refers to process_ledscreen.o(.text) for turn_off_screen_clrbuf
+    flash_if.o(.text) refers to mymiscfunc.o(.text) for Delay
+    flash_if.o(.text) refers to system_stm32f2xx.o(.text) for SystemInit
+    flash_if.o(.text) refers to core_cm3.o(.emb_text) for __set_MSP
+    flash_if.o(.text) refers to misc.o(.text) for NVIC_SetVectorTable
+    flash_if.o(.text) refers to flash_if.o(.data) for JumpAddress
+    tftpserver.o(.text) refers to inet.o(.text) for ntohs
+    tftpserver.o(.text) refers to pbuf.o(.text) for pbuf_alloc
+    tftpserver.o(.text) refers to udp.o(.text) for udp_sendto
+    tftpserver.o(.text) refers to mem.o(.text) for mem_malloc
+    tftpserver.o(.text) refers to flash_if.o(.text) for clr_prog_flag
+    tftpserver.o(.text) refers to strncpy.o(.text) for strncpy
+    tftpserver.o(.text) refers to strcmpv7m.o(.text) for strcmp
+    tftpserver.o(.text) refers to tftpserver.o(.data) for total_count
+    tftpserver.o(.text) refers to ip_addr.o(.constdata) for ip_addr_any
+    tftp_cli.o(.text) refers to pbuf.o(.text) for pbuf_alloc
+    tftp_cli.o(.text) refers to udp.o(.text) for udp_sendto
+    tftp_cli.o(.text) refers to strlen.o(.text) for strlen
+    tftp_cli.o(.text) refers to h1_alloc.o(.text) for malloc
+    tftp_cli.o(.text) refers to rt_memclr.o(.text) for __aeabi_memclr
+    tftp_cli.o(.text) refers to inet.o(.text) for htons
+    tftp_cli.o(.text) refers to rt_memcpy_v6.o(.text) for __aeabi_memcpy
+    tftp_cli.o(.text) refers to h1_free.o(.text) for free
+    tftp_cli.o(.text) refers to flash_if.o(.text) for clr_prog_flag
+    tftp_cli.o(.text) refers to stm32f2xx_flash.o(.text) for FLASH_Lock
+    tftp_cli.o(.text) refers to p_sys.o(.text) for get_timer0_clock
+    tftp_cli.o(.text) refers to rt_memclr_w.o(.text) for __aeabi_memclr4
+    tftp_cli.o(.text) refers to tftp_cli.o(.data) for err_codes
+    tftp_cli.o(.text) refers to tftp_cli.o(.bss) for tftp_conn_cli
+    tftp_cli.o(.text) refers to ip_addr.o(.constdata) for ip_addr_any
+    tftp_cli.o(.text) refers to strncmp.o(.text) for strncmp
+    tftp_cli.o(.data) refers to tftp_cli.o(.conststring) for .conststring
+    malloc.o(.text) refers (Special) to hguard.o(.text) for __heap$guard
+    malloc.o(.text) refers (Special) to init_alloc.o(.text) for _init_alloc
+    malloc.o(.text) refers to rt_heap_descriptor_intlibspace.o(.text) for __rt_heap_descriptor
+    malloc.o(.text) refers to heapstubs.o(.text) for __Heap_Alloc
+    free.o(.text) refers (Special) to hguard.o(.text) for __heap$guard
+    free.o(.text) refers to rt_heap_descriptor_intlibspace.o(.text) for __rt_heap_descriptor
+    free.o(.text) refers to heapstubs.o(.text) for __Heap_Free
+    h1_alloc.o(.text) refers (Special) to h1_init.o(.text) for __Heap_Initialize
+    h1_alloc.o(.text) refers to rt_heap_descriptor_intlibspace.o(.text) for __rt_heap_descriptor
+    h1_alloc.o(.text) refers to init_alloc.o(.text) for __Heap_Full
+    h1_free.o(.text) refers to rt_heap_descriptor_intlibspace.o(.text) for __rt_heap_descriptor
+    h1_alloc_mt.o(.text) refers (Special) to h1_init.o(.text) for __Heap_Initialize
+    h1_alloc_mt.o(.text) refers to init_alloc.o(.text) for __Heap_Full
+    h1_alloc_mt.o(.text) refers to rt_heap_descriptor_intlibspace.o(.text) for __rt_heap_descriptor
+    h1_free_mt.o(.text) refers to rt_heap_descriptor_intlibspace.o(.text) for __rt_heap_descriptor
+    heap2.o(i._FDIterate) refers to heap2.o(.conststring) for .conststring
+    heap2.o(i.___Heap_ProvideMemory$realtime) refers to fdtree.o(i._FDTree_Delete) for _FDTree_Delete
+    heap2.o(i.___Heap_ProvideMemory$realtime) refers to fdtree.o(i._FDTree_Insert) for _FDTree_Insert
+    heap2.o(i.___Heap_Stats$realtime) refers to heap2.o(i._Heap2_StatsIterate) for _Heap2_StatsIterate
+    heap2.o(i.___Heap_Valid$realtime) refers to heap2.o(i._FDIterate) for _FDIterate
+    heap2.o(i.___Heap_Valid$realtime) refers to heap2.o(.conststring) for .conststring
+    heap2.o(i._free$realtime) refers to rt_heap_descriptor_intlibspace.o(.text) for __rt_heap_descriptor
+    heap2.o(i._free$realtime) refers to fdtree.o(i._FDTree_Delete) for _FDTree_Delete
+    heap2.o(i._free$realtime) refers to fdtree.o(i._FDTree_Insert) for _FDTree_Insert
+    heap2.o(i._malloc$realtime) refers to rt_heap_descriptor_intlibspace.o(.text) for __rt_heap_descriptor
+    heap2.o(i._malloc$realtime) refers to fdtree.o(i._FDTree_FindFirst) for _FDTree_FindFirst
+    heap2.o(i._malloc$realtime) refers to init_alloc.o(.text) for __Heap_Full
+    heap2.o(i._malloc$realtime) refers to fdtree.o(i._FDTree_RemoveNode) for _FDTree_RemoveNode
+    heap2.o(i._malloc$realtime) refers to fdtree.o(i._FDTree_Insert) for _FDTree_Insert
+    heap2.o(i._posix_memalign$realtime) refers to rt_heap_descriptor_intlibspace.o(.text) for __rt_heap_descriptor
+    heap2.o(i._posix_memalign$realtime) refers to fdtree.o(i._FDTree_FindFirst) for _FDTree_FindFirst
+    heap2.o(i._posix_memalign$realtime) refers to init_alloc.o(.text) for __Heap_Full
+    heap2.o(i._posix_memalign$realtime) refers to fdtree.o(i._FDTree_RemoveNode) for _FDTree_RemoveNode
+    heap2.o(i._posix_memalign$realtime) refers to fdtree.o(i._FDTree_Insert) for _FDTree_Insert
+    heap2.o(i._realloc$realtime) refers to rt_heap_descriptor_intlibspace.o(.text) for __rt_heap_descriptor
+    heap2.o(i._realloc$realtime) refers to fdtree.o(i._FDTree_Insert) for _FDTree_Insert
+    heap2.o(i._realloc$realtime) refers to h1_free.o(.text) for free
+    heap2.o(i._realloc$realtime) refers to h1_alloc.o(.text) for malloc
+    heap2.o(i._realloc$realtime) refers to fdtree.o(i._FDTree_Delete) for _FDTree_Delete
+    heap2.o(i._realloc$realtime) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    heap2mt.o(i._FDIterate) refers to heap2mt.o(.conststring) for .conststring
+    heap2mt.o(i.___Heap_Initialize$realtime$concurrent) refers to mutex_dummy.o(.text) for _mutex_initialize
+    heap2mt.o(i.___Heap_ProvideMemory$realtime$concurrent) refers to fdtree.o(i._FDTree_Delete) for _FDTree_Delete
+    heap2mt.o(i.___Heap_ProvideMemory$realtime$concurrent) refers to fdtree.o(i._FDTree_Insert) for _FDTree_Insert
+    heap2mt.o(i.___Heap_Stats$realtime$concurrent) refers to heap2mt.o(i._Heap2_StatsIterate) for _Heap2_StatsIterate
+    heap2mt.o(i.___Heap_Valid$realtime$concurrent) refers to heap2mt.o(i._FDIterate) for _FDIterate
+    heap2mt.o(i.___Heap_Valid$realtime$concurrent) refers to heap2mt.o(.conststring) for .conststring
+    heap2mt.o(i._free$realtime$concurrent) refers to rt_heap_descriptor_intlibspace.o(.text) for __rt_heap_descriptor
+    heap2mt.o(i._free$realtime$concurrent) refers to fdtree.o(i._FDTree_Delete) for _FDTree_Delete
+    heap2mt.o(i._free$realtime$concurrent) refers to fdtree.o(i._FDTree_Insert) for _FDTree_Insert
+    heap2mt.o(i._malloc$realtime$concurrent) refers to rt_heap_descriptor_intlibspace.o(.text) for __rt_heap_descriptor
+    heap2mt.o(i._malloc$realtime$concurrent) refers to fdtree.o(i._FDTree_FindFirst) for _FDTree_FindFirst
+    heap2mt.o(i._malloc$realtime$concurrent) refers to init_alloc.o(.text) for __Heap_Full
+    heap2mt.o(i._malloc$realtime$concurrent) refers to fdtree.o(i._FDTree_RemoveNode) for _FDTree_RemoveNode
+    heap2mt.o(i._malloc$realtime$concurrent) refers to fdtree.o(i._FDTree_Insert) for _FDTree_Insert
+    heap2mt.o(i._posix_memalign$realtime$concurrent) refers to rt_heap_descriptor_intlibspace.o(.text) for __rt_heap_descriptor
+    heap2mt.o(i._posix_memalign$realtime$concurrent) refers to fdtree.o(i._FDTree_FindFirst) for _FDTree_FindFirst
+    heap2mt.o(i._posix_memalign$realtime$concurrent) refers to init_alloc.o(.text) for __Heap_Full
+    heap2mt.o(i._posix_memalign$realtime$concurrent) refers to fdtree.o(i._FDTree_RemoveNode) for _FDTree_RemoveNode
+    heap2mt.o(i._posix_memalign$realtime$concurrent) refers to fdtree.o(i._FDTree_Insert) for _FDTree_Insert
+    heap2mt.o(i._realloc$realtime$concurrent) refers to rt_heap_descriptor_intlibspace.o(.text) for __rt_heap_descriptor
+    heap2mt.o(i._realloc$realtime$concurrent) refers to fdtree.o(i._FDTree_Insert) for _FDTree_Insert
+    heap2mt.o(i._realloc$realtime$concurrent) refers to h1_free.o(.text) for free
+    heap2mt.o(i._realloc$realtime$concurrent) refers to h1_alloc.o(.text) for malloc
+    heap2mt.o(i._realloc$realtime$concurrent) refers to fdtree.o(i._FDTree_Delete) for _FDTree_Delete
+    heap2mt.o(i._realloc$realtime$concurrent) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    __2sprintf.o(.text) refers to _printf_char_common.o(.text) for _printf_char_common
+    __2sprintf.o(.text) refers to _sputc.o(.text) for _sputc
+    noretval__2sprintf.o(.text) refers to _printf_char_common.o(.text) for _printf_char_common
+    noretval__2sprintf.o(.text) refers to _sputc.o(.text) for _sputc
+    __printf.o(.text) refers to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
+    _printf_str.o(.text) refers (Special) to _printf_char.o(.text) for _printf_cs_common
+    _printf_str.o(.text) refers (Weak) to _printf_pad.o(.text) for _printf_pre_padding
+    _printf_str.o(.text) refers (Weak) to _printf_pad.o(.text) for _printf_post_padding
+    _printf_dec.o(.text) refers to _printf_intcommon.o(.text) for _printf_int_common
+    _printf_hex_ll.o(.text) refers to _printf_intcommon.o(.text) for _printf_int_common
+    _printf_hex_ll.o(.text) refers to _printf_hex_ll.o(.constdata) for .constdata
+    _printf_hex_int.o(.text) refers to _printf_intcommon.o(.text) for _printf_int_common
+    _printf_hex_int.o(.text) refers to _printf_hex_int.o(.constdata) for .constdata
+    _printf_hex_int_ll.o(.text) refers to _printf_intcommon.o(.text) for _printf_int_common
+    _printf_hex_int_ll.o(.text) refers to _printf_hex_int_ll.o(.constdata) for .constdata
+    _printf_hex_ptr.o(.text) refers to _printf_intcommon.o(.text) for _printf_int_common
+    _printf_hex_ptr.o(.text) refers to _printf_hex_ptr.o(.constdata) for .constdata
+    _printf_hex_int_ptr.o(.text) refers to _printf_intcommon.o(.text) for _printf_int_common
+    _printf_hex_int_ptr.o(.text) refers to _printf_hex_int_ptr.o(.constdata) for .constdata
+    _printf_hex_ll_ptr.o(.text) refers to _printf_intcommon.o(.text) for _printf_int_common
+    _printf_hex_ll_ptr.o(.text) refers to _printf_hex_ll_ptr.o(.constdata) for .constdata
+    _printf_hex_int_ll_ptr.o(.text) refers to _printf_intcommon.o(.text) for _printf_int_common
+    _printf_hex_int_ll_ptr.o(.text) refers to _printf_hex_int_ll_ptr.o(.constdata) for .constdata
+    __printf_flags.o(.text) refers to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
+    __printf_flags.o(.text) refers to __printf_flags.o(.constdata) for .constdata
+    __printf_ss.o(.text) refers to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
+    __printf_flags_ss.o(.text) refers to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
+    __printf_flags_ss.o(.text) refers to __printf_flags_ss.o(.constdata) for .constdata
+    __printf_wp.o(.text) refers to __printf_wp.o(i._is_digit) for _is_digit
+    __printf_wp.o(.text) refers to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
+    __printf_flags_wp.o(.text) refers to __printf_wp.o(i._is_digit) for _is_digit
+    __printf_flags_wp.o(.text) refers to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
+    __printf_flags_wp.o(.text) refers to __printf_flags_wp.o(.constdata) for .constdata
+    __printf_ss_wp.o(.text) refers to __printf_wp.o(i._is_digit) for _is_digit
+    __printf_ss_wp.o(.text) refers to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
+    __printf_flags_ss_wp.o(.text) refers to __printf_wp.o(i._is_digit) for _is_digit
+    __printf_flags_ss_wp.o(.text) refers to _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) for _printf_percent
+    __printf_flags_ss_wp.o(.text) refers to __printf_flags_ss_wp.o(.constdata) for .constdata
+    _printf_s.o(.ARM.Collect$$_printf_percent$$00000014) refers (Weak) to _printf_char.o(.text) for _printf_string
+    _printf_x.o(.ARM.Collect$$_printf_percent$$0000000C) refers (Weak) to _printf_hex_int.o(.text) for _printf_int_hex
+    _printf_d.o(.ARM.Collect$$_printf_percent$$00000009) refers (Weak) to _printf_dec.o(.text) for _printf_int_dec
+    _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000) refers (Special) to _printf_percent_end.o(.ARM.Collect$$_printf_percent$$00000017) for _printf_percent_end
+    atoi.o(.text) refers to rt_errno_addr_intlibspace.o(.text) for __aeabi_errno_addr
+    atoi.o(.text) refers to strtol.o(.text) for strtol
+    rt_memcpy_v6.o(.text) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    aeabi_memset.o(.text) refers to rt_memclr.o(.text) for _memset
+    rt_memclr.o(.text) refers to rt_memclr_w.o(.text) for _memset_w
+    strncpy.o(.text) refers to rt_memclr.o(.text) for __aeabi_memclr
+    __main.o(!!!main) refers to __rtentry.o(.ARM.Collect$$rtentry$$00000000) for __rt_entry
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$0000000A) for __rt_entry_li
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) for __rt_entry_main
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$0000000C) for __rt_entry_postli_1
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$00000009) for __rt_entry_postsh_1
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$00000002) for __rt_entry_presh_1
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry4.o(.ARM.Collect$$rtentry$$00000004) for __rt_entry_sh
+    rt_heap_descriptor.o(.text) refers to rt_heap_descriptor.o(.bss) for __rt_heap_descriptor_data
+    rt_heap_descriptor_intlibspace.o(.text) refers to libspace.o(.bss) for __libspace_start
+    rt_errno_addr.o(.text) refers to rt_errno_addr.o(.bss) for __aeabi_errno_addr_data
+    rt_errno_addr_intlibspace.o(.text) refers to libspace.o(.bss) for __libspace_start
+    init_alloc.o(.text) refers (Special) to hguard.o(.text) for __heap$guard
+    init_alloc.o(.text) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000005) for __rt_lib_init_heap_2
+    init_alloc.o(.text) refers (Special) to maybetermalloc1.o(.emb_text) for _maybe_terminate_alloc
+    init_alloc.o(.text) refers to h1_extend.o(.text) for __Heap_ProvideMemory
+    init_alloc.o(.text) refers to defsig_rtmem_outer.o(.text) for __rt_SIGRTMEM
+    init_alloc.o(.text) refers to rt_heap_descriptor_intlibspace.o(.text) for __rt_heap_descriptor
+    init_alloc.o(.text) refers to h1_init.o(.text) for __Heap_Initialize
+    h1_init_mt.o(.text) refers to mutex_dummy.o(.text) for _mutex_initialize
+    _printf_intcommon.o(.text) refers (Weak) to _printf_pad.o(.text) for _printf_pre_padding
+    _printf_intcommon.o(.text) refers (Weak) to _printf_pad.o(.text) for _printf_pre_padding
+    _printf_intcommon.o(.text) refers (Weak) to _printf_pad.o(.text) for _printf_post_padding
+    _printf_char_common.o(.text) refers to __printf_flags_wp.o(.text) for __printf
+    _printf_char.o(.text) refers (Weak) to _printf_str.o(.text) for _printf_str
+    strtol.o(.text) refers to rt_ctype_table.o(.text) for __rt_ctype_table
+    strtol.o(.text) refers to _strtoul.o(.text) for _strtoul
+    strtol.o(.text) refers to rt_errno_addr_intlibspace.o(.text) for __aeabi_errno_addr
+    _get_argv.o(.text) refers (Special) to hrguard.o(.text) for __heap_region$guard
+    _get_argv.o(.text) refers to h1_alloc.o(.text) for malloc
+    _get_argv.o(.text) refers to defsig_rtmem_outer.o(.text) for __rt_SIGRTMEM
+    _get_argv.o(.text) refers to sys_command.o(.text) for _sys_command_string
+    libinit2.o(.ARM.Collect$$libinit$$00000005) refers (Weak) to init_alloc.o(.text) for _init_alloc
+    libinit2.o(.ARM.Collect$$libinit$$0000000F) refers (Weak) to rt_locale_intlibspace.o(.text) for __rt_locale
+    libinit2.o(.ARM.Collect$$libinit$$00000010) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000012) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000012) refers (Weak) to lc_ctype_c.o(locale$$code) for _get_lc_ctype
+    libinit2.o(.ARM.Collect$$libinit$$00000014) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000016) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000018) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000026) refers to argv_veneer.o(.emb_text) for __ARM_argv_veneer
+    libinit2.o(.ARM.Collect$$libinit$$00000027) refers to argv_veneer.o(.emb_text) for __ARM_argv_veneer
+    sys_command.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_command.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    libspace.o(.text) refers to libspace.o(.bss) for __libspace_start
+    __rtentry2.o(.ARM.Collect$$rtentry$$00000008) refers to boardinit2.o(.text) for _platform_post_stackheap_init
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000A) refers to libinit.o(.ARM.Collect$$libinit$$00000000) for __rt_lib_init
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000B) refers to boardinit3.o(.text) for _platform_post_lib_init
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) refers to main.o(.text) for main
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) refers to exit.o(.text) for exit
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$00000001) for .ARM.Collect$$rtentry$$00000001
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$00000008) for .ARM.Collect$$rtentry$$00000008
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$0000000A) for .ARM.Collect$$rtentry$$0000000A
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$0000000B) for .ARM.Collect$$rtentry$$0000000B
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) for .ARM.Collect$$rtentry$$0000000D
+    __rtentry4.o(.ARM.Collect$$rtentry$$00000004) refers to sys_stackheap_outer.o(.text) for __user_setup_stackheap
+    __rtentry4.o(.ARM.exidx) refers to __rtentry4.o(.ARM.Collect$$rtentry$$00000004) for .ARM.Collect$$rtentry$$00000004
+    rt_ctype_table.o(.text) refers to rt_locale_intlibspace.o(.text) for __rt_locale
+    rt_ctype_table.o(.text) refers to lc_ctype_c.o(locale$$code) for _get_lc_ctype
+    maybetermalloc2.o(.emb_text) refers (Special) to term_alloc.o(.text) for _terminate_alloc
+    h1_extend.o(.text) refers to h1_free.o(.text) for free
+    h1_extend_mt.o(.text) refers to h1_free_mt.o(.text) for _free_internal
+    _strtoul.o(.text) refers to _chval.o(.text) for _chval
+    _strtoul.o(.text) refers to rt_errno_addr_intlibspace.o(.text) for __aeabi_errno_addr
+    defsig_rtmem_outer.o(.text) refers to defsig_rtmem_inner.o(.text) for __rt_SIGRTMEM_inner
+    defsig_rtmem_outer.o(.text) refers to defsig_exit.o(.text) for __sig_exit
+    defsig_rtmem_formal.o(.text) refers to rt_raise.o(.text) for __rt_raise
+    heapauxa.o(.text) refers to heapauxa.o(.data) for .data
+    argv_veneer.o(.emb_text) refers to no_argv.o(.text) for __ARM_get_argv
+    sys_stackheap_outer.o(.text) refers to libspace.o(.text) for __user_perproc_libspace
+    sys_stackheap_outer.o(.text) refers to startup_stm32f2xx.o(.text) for __user_initial_stackheap
+    rt_raise.o(.text) refers to __raise.o(.text) for __raise
+    rt_raise.o(.text) refers to sys_exit.o(.text) for _sys_exit
+    rt_locale.o(.text) refers to rt_locale.o(.bss) for __rt_locale_data
+    rt_locale_intlibspace.o(.text) refers to libspace.o(.bss) for __libspace_start
+    term_alloc.o(.text) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$0000000E) for __rt_lib_shutdown_heap_2
+    term_alloc.o(.text) refers to rt_heap_descriptor_intlibspace.o(.text) for __rt_heap_descriptor
+    term_alloc.o(.text) refers to h1_final.o(.text) for __Heap_Finalize
+    lc_ctype_c.o(locale$$data) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000012) for __rt_lib_init_lc_ctype_2
+    lc_ctype_c.o(locale$$code) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000012) for __rt_lib_init_lc_ctype_2
+    lc_ctype_c.o(locale$$code) refers to strcmpv7m.o(.text) for strcmp
+    lc_ctype_c.o(locale$$code) refers to lc_ctype_c.o(locale$$data) for __lcctype_c_name
+    exit.o(.text) refers to rtexit.o(.ARM.Collect$$rtexit$$00000000) for __rt_exit
+    defsig_exit.o(.text) refers to sys_exit.o(.text) for _sys_exit
+    defsig_rtmem_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    _get_argv_nomalloc.o(.text) refers (Special) to hrguard.o(.text) for __heap_region$guard
+    _get_argv_nomalloc.o(.text) refers to defsig_rtmem_outer.o(.text) for __rt_SIGRTMEM
+    _get_argv_nomalloc.o(.text) refers to sys_command.o(.text) for _sys_command_string
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000002E) for __rt_lib_init_alloca_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000002C) for __rt_lib_init_argv_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000001B) for __rt_lib_init_atexit_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000021) for __rt_lib_init_clock_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000032) for __rt_lib_init_cpp_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000030) for __rt_lib_init_exceptions_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000002) for __rt_lib_init_fp_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000001F) for __rt_lib_init_fp_trap_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000023) for __rt_lib_init_getenv_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000000A) for __rt_lib_init_heap_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000011) for __rt_lib_init_lc_collate_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000013) for __rt_lib_init_lc_ctype_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000015) for __rt_lib_init_lc_monetary_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000017) for __rt_lib_init_lc_numeric_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000019) for __rt_lib_init_lc_time_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000004) for __rt_lib_init_preinit_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000000E) for __rt_lib_init_rand_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000033) for __rt_lib_init_return
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000001D) for __rt_lib_init_signal_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000025) for __rt_lib_init_stdio_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000000C) for __rt_lib_init_user_alloc_1
+    sys_exit.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_exit.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    rtexit.o(.ARM.Collect$$rtexit$$00000000) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000004) for __rt_exit_exit
+    rtexit.o(.ARM.Collect$$rtexit$$00000000) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000003) for __rt_exit_ls
+    rtexit.o(.ARM.Collect$$rtexit$$00000000) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000002) for __rt_exit_prels_1
+    rtexit.o(.ARM.exidx) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000004) for __rt_exit_exit
+    rtexit.o(.ARM.exidx) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000003) for __rt_exit_ls
+    rtexit.o(.ARM.exidx) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000002) for __rt_exit_prels_1
+    rtexit.o(.ARM.exidx) refers to rtexit.o(.ARM.Collect$$rtexit$$00000000) for .ARM.Collect$$rtexit$$00000000
+    __raise.o(.text) refers to defsig.o(CL$$defsig) for __default_signal_handler
+    defsig_general.o(.text) refers to sys_wrch.o(.text) for _ttywrch
+    libshutdown2.o(.ARM.Collect$$libshutdown$$0000000D) refers (Weak) to term_alloc.o(.text) for _terminate_alloc
+    sys_wrch.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_wrch.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    rtexit2.o(.ARM.Collect$$rtexit$$00000003) refers to libshutdown.o(.ARM.Collect$$libshutdown$$00000000) for __rt_lib_shutdown
+    rtexit2.o(.ARM.Collect$$rtexit$$00000004) refers to sys_exit.o(.text) for _sys_exit
+    rtexit2.o(.ARM.exidx) refers to rtexit2.o(.ARM.Collect$$rtexit$$00000001) for .ARM.Collect$$rtexit$$00000001
+    rtexit2.o(.ARM.exidx) refers to rtexit2.o(.ARM.Collect$$rtexit$$00000003) for .ARM.Collect$$rtexit$$00000003
+    rtexit2.o(.ARM.exidx) refers to rtexit2.o(.ARM.Collect$$rtexit$$00000004) for .ARM.Collect$$rtexit$$00000004
+    defsig.o(CL$$defsig) refers to defsig_rtmem_inner.o(.text) for __rt_SIGRTMEM_inner
+    defsig_abrt_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_fpe_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_rtred_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_stak_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_pvfn_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_cppl_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_segv_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_other.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000002) for __rt_lib_shutdown_cpp_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000007) for __rt_lib_shutdown_fp_trap_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$0000000F) for __rt_lib_shutdown_heap_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000010) for __rt_lib_shutdown_return
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$0000000A) for __rt_lib_shutdown_signal_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000004) for __rt_lib_shutdown_stdio_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$0000000C) for __rt_lib_shutdown_user_alloc_1
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing myaudiosample.o(.constdata), (96000 bytes).
+    Removing myboard.o(.data), (1 bytes).
+    Removing myflash.o(.text), (148 bytes).
+    Removing myflash.o(.data), (12 bytes).
+    Removing myswitch.o(.text), (124 bytes).
+    Removing init.o(.text), (16 bytes).
+    Removing stm32f2xx_dbgmcu.o(.text), (100 bytes).
+    Removing stm32f2xx_exti.o(.text), (284 bytes).
+    Removing stm32f2xx_pwr.o(.text), (216 bytes).
+    Removing stm32f2xx_tim.o(.text), (3234 bytes).
+    Removing stm32f2xx_usart.o(.text), (1050 bytes).
+    Removing tftpserver.o(.text), (792 bytes).
+    Removing tftpserver.o(.data), (12 bytes).
+
+13 unused section(s) (total 101989 bytes) removed from the image.

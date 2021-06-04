@@ -1,0 +1,51 @@
+IAP:0x8000000
+SIZE:0xFFFF
+
+----IAP0X8010000---ADDR_FLASH_SECTOR_0---------ADDR_FLASH_SECTOR_4
+
+ADDR_FLASH_SECTOR_4----ADDR_FLASH_SECTOR_5  PARAM
+
+ADDR_FLASH_SECTOR_5  0x08020000
+
+ADDR_FLASH_SECTOR_5  0x08040000----ADDR_FLASH_SECTOR_6
+
+APP:0x8020000
+SIZE:1FFFF
+
+
+STM32F207ZCT6   256K Flash  128 Kbytes of system SRAM
+
+
+
+Part numbering
+For a list of available options (speed, package, etc.) or for further information on any aspect
+of this device, please contact your nearest ST sales office.
+Table 96. Ordering information scheme
+Example: STM32 F 205 R E T 6 Vxxx
+Device family
+STM32 = ARM-based 32-bit microcontroller
+Product type
+F = general-purpose
+Device subfamily
+205 = STM32F20x, connectivity
+207= STM32F20x, connectivity, camera interface,
+Ethernet
+Pin count
+R = 64 pins or 66 pins (1)
+V = 100 pins
+Z = 144 pins
+I = 176 pins
+Flash memory size
+B = 128 Kbytes of Flash memory
+C = 256 Kbytes of Flash memory
+E = 512 Kbytes of Flash memory
+F = 768 Kbytes of Flash memory
+G = 1024 Kbytes of Flash memory
+Package
+T = LQFP
+H = UFBGA
+Y = WLCSP
+Temperature range
+6 = Industrial temperature range, –40 to 85 °C.
+7 = Industrial temperature range, –40 to 105 °C.
+

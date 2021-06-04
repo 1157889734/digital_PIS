@@ -1,0 +1,7 @@
+---- turn_off_screen_clrbuf Matches (6 in 4 files) ----
+MyNet.c (driver\drv_bsp):	turn_off_screen_clrbuf();
+Process_ledscreen.c (app\process):void turn_off_screen_clrbuf(void)
+Process_ledscreen.c (app\process):	turn_off_screen_clrbuf();
+Process_ledscreen.c (app\process):		turn_off_screen_clrbuf();
+Process_ledscreen.h (app\process):void turn_off_screen_clrbuf(void);
+Process_net.c (app\process):	turn_off_screen_clrbuf();

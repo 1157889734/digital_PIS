@@ -1,0 +1,35 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Project:</h2>
+E:\brd\项目\深圳9号线\软件\功率放大器\PowerAmp\PowerAmpFw.uvproj
+Project File Date:  04/28/2018
+
+<h2>Output:</h2>
+Build target 'PowerAmpFw'
+compiling MyTftpClient.c...
+linking...
+Program Size: Code=74272 RO-data=13488 RW-data=1316 ZI-data=91820  
+FromELF: creating hex file...
+User command #1: C:\Keil\ARM\BIN40\fromelf.exe --bin --output ./bin/PowerAmpFw.bin ./out/PowerAmpFw.axf
+".\Out\PowerAmpFw.axf" - 0 Error(s), 0 Warning(s).
+Build target 'PowerAmpFw'
+compiling MyAudio.c...
+linking...
+Program Size: Code=74284 RO-data=13484 RW-data=1316 ZI-data=91820  
+FromELF: creating hex file...
+User command #1: C:\Keil\ARM\BIN40\fromelf.exe --bin --output ./bin/PowerAmpFw.bin ./out/PowerAmpFw.axf
+".\Out\PowerAmpFw.axf" - 0 Error(s), 0 Warning(s).
+Build target 'PowerAmpFw'
+linking...
+Program Size: Code=74284 RO-data=13484 RW-data=1316 ZI-data=91820  
+FromELF: creating hex file...
+User command #1: C:\Keil\ARM\BIN40\fromelf.exe --bin --output ./bin/PowerAmpFw.bin ./out/PowerAmpFw.axf
+".\Out\PowerAmpFw.axf" - 0 Error(s), 0 Warning(s).
+Build target 'PowerAmpFw'
+linking...
+Program Size: Code=74284 RO-data=13484 RW-data=1316 ZI-data=91820  
+FromELF: creating hex file...
+User command #1: C:\Keil\ARM\BIN40\fromelf.exe --bin --output ./bin/PowerAmpFw.bin ./out/PowerAmpFw.axf
+".\Out\PowerAmpFw.axf" - 0 Error(s), 0 Warning(s).

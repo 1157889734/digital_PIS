@@ -1,0 +1,132 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+E:\share\21.digitalpis-zhongdianzhan\pro\iap_proj\keil_proj\proj\dvlp_prj.uvproj
+Project File Date:  11/17/2013
+
+<h2>Output:</h2>
+Build target 'Target 1'
+linking...
+Program Size: Code=56776 RO-data=2148 RW-data=1036 ZI-data=93028  
+FromELF: creating hex file...
+User command #1: C:\Keil\ARM\BIN40\fromelf.exe --bin --output ./bin/dvlp_prj.bin ./out/dvlp_prj.axf
+".\out\dvlp_prj.axf" - 0 Error(s), 0 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\iap_proj\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\iap_proj\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.287V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\iap_proj\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\iap_proj\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.280V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\iap_proj\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\iap_proj\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.293V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.

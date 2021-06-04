@@ -1,0 +1,13 @@
+del *.bak
+del *.uvopt
+del *.map
+del *.lst
+del *.crf
+del *.d
+del *.o
+del *.axf
+del *.hex
+del *.htm
+del *.lnp
+del *.sct
+del *.tra

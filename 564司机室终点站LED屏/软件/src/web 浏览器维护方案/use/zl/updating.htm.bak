@@ -1,0 +1,15 @@
+const unsigned char updating[] = "<html>\
+<body>\
+<center>\
+	<h3><br />程序更新中...,请耐心等待!<br />并注意本地电脑的tftp工具的提示信息,当程序下载完毕后,重新登陆设备,以验证程序更新是否成功。</h3>\
+</center>\
+</body>\
+</html>";
+
+const unsigned char updating[] = "<html>\
+<body>\
+<center>\
+	<h3><br />程序更新中...,请耐心等待!<br />并注意本地电脑的tftp工具的提示信息,当程序下载完毕后,重新登陆设备,以验证程序更新是否成功。</h3>\
+</center>\
+</body>\
+</html>";

@@ -1,0 +1,26 @@
+const unsigned char update_sw[] = "<html>\
+<body>\
+<center>\
+	<h2>软件更新维护</h2>\
+</center>\
+<form action=\"update_sw\" method=\"get\">\
+<table cellspacing=\"5\" width=\"100%%\" border=\"1\" cellpadding=\"5\" >\
+	<tr>\
+		<td align=\"center\">\
+			目标文件:<input type=\"text\" name=\"sw_file\" />\
+			<br />\
+			tftp服务器IP:<input type=\"text\" name=\"ip1\" maxlength=\"3\" size=\"6\"/>.<input type=\"text\" name=\"ip2\" />.<input type=\"text\" name=\"ip3\" />.<input type=\"text\" name=\"ip4\" />\
+		</td>\
+	</tr>\
+	<tr>\
+		<td align=\"center\" colspan=\"1\">\
+			<input type=\"submit\" name=\"modify\" value=\"update\" />\
+		</td>\
+	</tr>\
+</table>\
+</form>\
+<p>\
+	<em>说明：按“update”按钮，启动设备的bootloader,然后使用本地电脑的tftp客户端向设备发送对应的目标文件</em>\
+</p>\
+</body>\
+</html>";

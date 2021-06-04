@@ -1,0 +1,1 @@
+.\lwip_v1.3.2\src\include\; .\lwip_v1.3.2\src\include\lwip; .\lwip_v1.3.2\src\include\netif; .\lwip_v1.3.2\src\include\ipv4; .\lwip_v1.3.2\port\STM32F2x7; .\lwip_v1.3.2\port\STM32F2x7\Standalone

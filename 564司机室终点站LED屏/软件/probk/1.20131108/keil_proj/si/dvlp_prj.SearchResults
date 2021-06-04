@@ -1,0 +1,3 @@
+---- COL_BYTE_SUM Matches (2 in 2 files) ----
+Hc595.c (driver\drv_bsp):	for (i = 0; i < COL_BYTE_SUM; i++) {
+Hc595.h (driver\drv_bsp):#define	COL_BYTE_SUM	(COL_SUM/8)

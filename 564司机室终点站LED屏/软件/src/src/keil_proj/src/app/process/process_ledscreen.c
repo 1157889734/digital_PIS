@@ -1,0 +1,1585 @@
+#include "includes.h"
+
+//主框架变动.主框架发布次数.svn source code version 千百位.svn source code version十个位
+const uint8 software_version[4] = {1, 2, 16, 49};
+
+//这两个buf 长度相同
+uint8	ledbuf_tmp1[LEDBUF_COL_SUM][LEDBUF_ROW_GRP];	//显示数据备份,协议包数据的直接拷贝
+uint8	ledbuf_tmp[LEDBUF_COL_SUM][LEDBUF_ROW_GRP];	//显示数据备份
+
+uint16	roll_col_sum_tmp = 0;			//显示数据纵向字节数备份
+uint8	color_tmp = COLOR_NONE;
+uint16	roll_col_num = 0;
+
+
+//与原red_EN, green_EN  数组的一维二维倒置
+uint8 red_tmp[DISP_COL_SUM][DISP_ROW_GRP];
+uint8 green_tmp[DISP_COL_SUM][DISP_ROW_GRP];
+
+uint8	roll_speed = PREset_roll_speed;
+uint16	brightness= PREset_brightness;
+
+uint16	DISP_COL_TAIL	=COL_SUM -1;		//  
+uint16	DISP_COL_HEAD	=0;		//
+uint16	DIV				=1;		//每次移动的列数 1 - 7
+uint16	FILL_COLsum_tail		=16;		//ledbuf_tmp尾部填充的空列数
+uint16	FILL_COLsum_head	=COL_SUM;//
+
+#if 1
+uint8 screen_roll(uint16 roll_col_sum, uint8 color)
+{
+	uint16	col_sum;				//总列数
+	uint16	disp_col_tail;			//有效显示区域的尾行
+	uint16	disp_col_head;		//有效显示区域的起始行
+	uint8	div;			//每次移动的列数 1 - 7
+	uint16	fill_colsum_tail, fill_colsum_head;		//ledbuf_tmp头部填充的空列数
+	uint16	i,j;
+	static uint8 flag_tmp = 0;
+
+	disp_col_tail = DISP_COL_TAIL;
+	disp_col_head = DISP_COL_HEAD;
+	div = DIV;
+	fill_colsum_head = FILL_COLsum_head;
+	fill_colsum_tail = FILL_COLsum_tail;
+
+	if(!flag_tmp)
+	{
+		roll_col_sum_tmp = roll_col_sum;
+		color_tmp = color;
+		memset(red_tmp[0], 0xff, sizeof(red_tmp));
+		memset(green_tmp[0], 0xff, sizeof(green_tmp));
+		// 填充
+		memset(ledbuf_tmp, 0xff, sizeof(ledbuf_tmp));
+		memcpy(ledbuf_tmp[fill_colsum_head], ledbuf_tmp1[0], roll_col_sum_tmp*LEDBUF_ROW_GRP);
+					
+		roll_col_num = 0;
+		flag_tmp = 1;
+	}
+
+	//缓冲区数据是否有更新
+	//有,则重新从最右面开始滚屏
+#if 1
+	if ((roll_col_sum_tmp == roll_col_sum) && (color_tmp == color)) {
+		for (i = 0; i < roll_col_sum_tmp; i++) {
+			for (j = 0; j < DISP_ROW_GRP; j++) {
+				if (ledbuf_tmp[i+fill_colsum_head][j] != ledbuf_tmp1[i][j]) {
+					memset(red_tmp[0], 0xff, sizeof(red_tmp));
+					memset(green_tmp[0], 0xff, sizeof(green_tmp));
+					// 填充
+					memset(ledbuf_tmp, 0xff, sizeof(ledbuf_tmp));
+					memcpy(ledbuf_tmp[fill_colsum_head], ledbuf_tmp1[0], roll_col_sum_tmp*LEDBUF_ROW_GRP);
+					roll_col_num = 0;
+					break;
+				}
+			}
+		}
+	}
+	else {
+		roll_col_sum_tmp = roll_col_sum;
+		color_tmp = color;
+		memset(red_tmp[0], 0xff, sizeof(red_tmp));
+		memset(green_tmp[0], 0xff, sizeof(green_tmp));
+		// 填充
+		memset(ledbuf_tmp, 0xff, sizeof(ledbuf_tmp));
+		memcpy(ledbuf_tmp[fill_colsum_head], ledbuf_tmp1[0], roll_col_sum_tmp*LEDBUF_ROW_GRP);
+					
+		roll_col_num = 0;
+	}
+#endif
+
+	//计算总的列数
+	col_sum = roll_col_sum_tmp + fill_colsum_head + fill_colsum_tail;
+	
+
+	//颜色判断
+	if ((color_tmp != COLOR_RED) && (color_tmp != COLOR_GREEN) && (color_tmp != COLOR_YELLOW)) {
+		//颜色无效清空显示
+		memset(red_tmp[0], 0xff, sizeof(red_tmp));
+		memset(green_tmp[0], 0xff, sizeof(green_tmp));
+
+	}
+	else {
+		switch (color_tmp) {
+		case COLOR_GREEN:
+			memcpy(green_tmp[disp_col_head], ledbuf_tmp[roll_col_num], (disp_col_tail + 1 - disp_col_head)*DISP_ROW_GRP);
+			break;
+					
+		case COLOR_RED:
+			memcpy(red_tmp[disp_col_head], ledbuf_tmp[roll_col_num], (disp_col_tail + 1 - disp_col_head)*DISP_ROW_GRP);
+			break;
+					
+		case COLOR_YELLOW:
+			memcpy(green_tmp[disp_col_head], ledbuf_tmp[roll_col_num], (disp_col_tail + 1 - disp_col_head)*DISP_ROW_GRP);
+			memcpy(red_tmp[disp_col_head], ledbuf_tmp[roll_col_num], (disp_col_tail + 1 - disp_col_head)*DISP_ROW_GRP);
+			break;
+					
+		default:
+			break;
+		}
+		
+	}
+	memcpy(&green_CN[0][0], &green_tmp[0][0], sizeof(green_CN));
+	memcpy(&red_CN[0][0], &red_tmp[0][0], sizeof(red_CN));
+
+	//memcpy(&green_EN[0][0], &green_tmp[0][0], sizeof(green_EN));
+	//memcpy(&red_EN[0][0], &red_tmp[0][0], sizeof(red_EN));
+
+	// 调整源数据的列号
+	roll_col_num += div;
+	if (roll_col_num >= col_sum) {
+		roll_col_num = 0;
+		return 1;
+	}
+	else
+		return 0;
+}
+#else
+void screen_roll(uint16 roll_col_sum, uint8 color)
+{
+	
+	uint16	col_sum;								//总列数
+	uint16	fill_colsum_head;		//ledbuf_tmp头部填充的空列数
+	
+	fill_colsum_head = 0;
+
+
+//缓冲区数据是否有更新
+//有,则重新从最右面开始滚?
+
+	//if(download_flag)
+	{
+		if(memcmp(ledbuf_tmp[fill_colsum_head], ledbuf_tmp1[0], roll_col_sum) !=0|| ((color_tmp != color))||(roll_col_sum_tmp != roll_col_sum))	//memcmp 相等为0
+		{
+			roll_col_sum_tmp = roll_col_sum;
+			color_tmp = color;
+			memset(red_CN, 0xff, sizeof(red_CN));
+			memset(green_CN, 0xff, sizeof(green_CN));
+			// 填充
+			memset(ledbuf_tmp, 0xff, sizeof(ledbuf_tmp));
+			memcpy(ledbuf_tmp[fill_colsum_head], ledbuf_tmp1[0], roll_col_sum);//roll_col_sum_tmp*LEDBUF_ROW_GRP);						
+			roll_col_num = 0;
+			
+		}
+	}
+
+	//计算总的列数
+	col_sum =  roll_col_sum_tmp + fill_colsum_head;
+
+
+	//颜色判断
+	if ((color_tmp != COLOR_RED) && (color_tmp != COLOR_GREEN) && (color_tmp != COLOR_YELLOW)) {
+		//颜色无效清空显示
+		memset(red_CN, 0xff, sizeof(red_CN));
+		memset(green_CN, 0xff, sizeof(green_CN));
+		
+	}
+	else {
+		switch (color_tmp) {
+			
+		case COLOR_GREEN:
+			memcpy(green_CN, ledbuf_tmp[roll_col_num], 48);  //拷贝一屏共320个字节
+			break;
+					
+		case COLOR_RED:
+			
+			memcpy(red_CN, ledbuf_tmp[roll_col_num], 48);  
+			break;
+					
+		case COLOR_YELLOW:
+			memcpy(green_CN, ledbuf_tmp[roll_col_num], 48);
+			memcpy(red_CN, ledbuf_tmp[roll_col_num], 48);
+			break;
+					
+		default:
+			break;
+		}
+		
+	}
+
+
+	//memcpy(&green[0][0], &green_tmp[0][0], sizeof(green));
+	//memcpy(&red[0][0], &red_tmp[0][0], sizeof(red));
+
+
+	// 调整源数据的列号
+	//roll_col_num += div;
+	roll_col_num++;
+	if (roll_col_num >= col_sum) {
+		roll_col_num = 0;
+	}
+	
+	
+}
+#endif
+
+
+//编译时间
+const char build_date_str[]	=__DATE__;	//日期格式："Dec 22 2010"
+//const char build_date_str[]=__DATE2__;	//日期格式："12/22/10"
+const char build_time_str[]	=__TIME__;	//时间格式："10:16:14"
+typedef struct {
+	uint16 index;
+	char character;
+}TAG_CHAR_TBL;
+
+const TAG_CHAR_TBL char_tbl[] = {
+    {0,    '0'},
+    {1,    '1'},
+    {2,    '2'},
+    {3,    '3'},
+    {4,    '4'},
+    {5,    '5'},
+    {6,    '6'},
+    {7,    '7'},
+    {8,    '8'},
+    {9,    '9'},
+    {10,   'a'},
+    {11,   'b'},
+    {12,   'c'},
+    {13,   'd'},
+    {14,   'e'},
+    {15,   'f'},
+    {16,   'g'},
+    {17,   'h'},
+    {18,   'i'},
+    {19,   'j'},
+    {20,   'k'},
+    {21,   'l'},
+    {22,   'm'},
+    {23,   'n'},
+    {24,   'o'},
+    {25,   'p'},
+    {26,   'q'},
+    {27,   'r'},
+    {28,   's'},
+    {29,   't'},
+    {30,   'u'},
+    {31,   'v'},
+    {32,   'w'},
+    {33,   'x'},
+    {34,   'y'},
+    {35,   'z'},
+    {36,   'A'},
+    {37,   'B'},
+    {38,   'C'},
+    {39,   'D'},
+    {40,   'E'},
+    {41,   'F'},
+    {42,   'G'},
+    {43,   'H'},
+    {44,   'I'},
+    {45,   'J'},
+    {46,   'K'},
+    {47,   'L'},
+    {48,   'M'},
+    {49,   'N'},
+    {50,   'O'},
+    {51,   'P'},
+    {52,   'Q'},
+    {53,   'R'},
+    {54,   'S'},
+    {55,   'T'},
+    {56,   'U'},
+    {57,   'V'},
+    {58,   'W'},
+    {59,   'X'},
+    {60,   'Y'},
+    {61,   'Z'},
+    {62,   '.'},
+    {63,   '_'},
+    {64,    '+'},
+    {65,    '-'},
+    {66,    ','},
+    {67,    ':'},
+    {68,    ' '},
+    {69,    ';'},
+    {70,    '/'},
+    {71,    '['},
+    {72,    ']'},
+    {73,    '<'},
+    {74,    '>'},
+    {75,    '|'}
+
+};
+
+
+/*
+0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ._+-,: ;/[]<>
+*/
+const uint8 zimo[] = {
+/*--  文字:  0  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x07,0x08,0x10,0x10,0x08,0x07,0x00,0x00,0xF0,0x08,0x04,0x04,0x08,0xF0,0x00,
+
+/*--  文字:  1  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x08,0x08,0x1F,0x00,0x00,0x00,0x00,0x00,0x04,0x04,0xFC,0x04,0x04,0x00,0x00,
+
+/*--  文字:  2  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x0E,0x10,0x10,0x10,0x11,0x0E,0x00,0x00,0x0C,0x14,0x24,0x44,0x84,0x0C,0x00,
+
+/*--  文字:  3  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x0C,0x10,0x11,0x11,0x12,0x0C,0x00,0x00,0x18,0x04,0x04,0x04,0x88,0x70,0x00,
+
+/*--  文字:  4  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x00,0x03,0x04,0x08,0x1F,0x00,0x00,0x00,0xE0,0x20,0x24,0x24,0xFC,0x24,0x00,
+
+/*--  文字:  5  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x1F,0x10,0x11,0x11,0x10,0x10,0x00,0x00,0x98,0x84,0x04,0x04,0x88,0x70,0x00,
+
+/*--  文字:  6  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x07,0x08,0x11,0x11,0x18,0x00,0x00,0x00,0xF0,0x88,0x04,0x04,0x88,0x70,0x00,
+
+/*--  文字:  7  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x1C,0x10,0x10,0x13,0x1C,0x10,0x00,0x00,0x00,0x00,0xFC,0x00,0x00,0x00,0x00,
+
+/*--  文字:  8  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x0E,0x11,0x10,0x10,0x11,0x0E,0x00,0x00,0x38,0x44,0x84,0x84,0x44,0x38,0x00,
+
+/*--  文字:  9  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x07,0x08,0x10,0x10,0x08,0x07,0x00,0x00,0x00,0x8C,0x44,0x44,0x88,0xF0,0x00,
+
+/*--  文字:  a  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x00,0x01,0x01,0x01,0x01,0x00,0x00,0x00,0x98,0x24,0x44,0x44,0x44,0xFC,0x04,
+
+/*--  文字:  b  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x10,0x1F,0x00,0x01,0x01,0x00,0x00,0x00,0x00,0xFC,0x88,0x04,0x04,0x88,0x70,0x00,
+
+/*--  文字:  c  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x00,0x00,0x01,0x01,0x01,0x00,0x00,0x00,0x70,0x88,0x04,0x04,0x04,0x88,0x00,
+
+/*--  文字:  d  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x00,0x00,0x01,0x01,0x11,0x1F,0x00,0x00,0x70,0x88,0x04,0x04,0x08,0xFC,0x04,
+
+/*--  文字:  e  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x00,0x01,0x01,0x01,0x01,0x00,0x00,0x00,0xF8,0x44,0x44,0x44,0x44,0xC8,0x00,
+
+/*--  文字:  f  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x01,0x01,0x0F,0x11,0x11,0x11,0x18,0x00,0x04,0x04,0xFC,0x04,0x04,0x00,0x00,
+
+/*--  文字:  g  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x00,0x01,0x01,0x01,0x01,0x01,0x00,0x00,0xD6,0x29,0x29,0x29,0xC9,0x06,0x00,
+
+/*--  文字:  h  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x10,0x1F,0x00,0x01,0x01,0x01,0x00,0x00,0x04,0xFC,0x84,0x00,0x00,0x04,0xFC,0x04,
+
+/*--  文字:  i  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x01,0x19,0x19,0x00,0x00,0x00,0x00,0x00,0x04,0x04,0xFC,0x04,0x04,0x00,0x00,
+
+/*--  文字:  j  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x00,0x00,0x01,0x19,0x19,0x00,0x00,0x00,0x03,0x01,0x01,0x01,0xFE,0x00,0x00,
+
+/*--  文字:  k  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x10,0x1F,0x00,0x00,0x01,0x01,0x01,0x00,0x04,0xFC,0x24,0x40,0xB4,0x0C,0x04,0x00,
+
+/*--  文字:  l  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x10,0x10,0x1F,0x00,0x00,0x00,0x00,0x00,0x04,0x04,0xFC,0x04,0x04,0x00,0x00,
+
+/*--  文字:  m  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x01,0x01,0x01,0x01,0x01,0x01,0x01,0x00,0x04,0xFC,0x04,0x00,0xFC,0x04,0x00,0xFC,
+
+/*--  文字:  n  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x01,0x01,0x00,0x01,0x01,0x01,0x00,0x00,0x04,0xFC,0x84,0x00,0x00,0x04,0xFC,0x04,
+
+/*--  文字:  o  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x00,0x01,0x01,0x01,0x01,0x00,0x00,0x00,0xF8,0x04,0x04,0x04,0x04,0xF8,0x00,
+
+/*--  文字:  p  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x01,0x01,0x00,0x01,0x01,0x00,0x00,0x00,0x01,0xFF,0x85,0x04,0x04,0x88,0x70,0x00,
+
+/*--  文字:  q  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x00,0x00,0x01,0x01,0x01,0x01,0x00,0x00,0x70,0x88,0x04,0x04,0x05,0xFF,0x01,
+
+/*--  文字:  r  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x01,0x01,0x01,0x00,0x01,0x01,0x01,0x00,0x04,0x04,0xFC,0x84,0x04,0x00,0x80,0x00,
+
+/*--  文字:  s  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x00,0x01,0x01,0x01,0x01,0x01,0x00,0x00,0xCC,0x24,0x24,0x24,0x24,0x98,0x00,
+
+/*--  文字:  t  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x01,0x01,0x07,0x01,0x01,0x00,0x00,0x00,0x00,0x00,0xF8,0x04,0x04,0x00,0x00,
+
+/*--  文字:  u  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x01,0x01,0x00,0x00,0x00,0x01,0x01,0x00,0x00,0xF8,0x04,0x04,0x04,0x08,0xFC,0x04,
+
+/*--  文字:  v  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x01,0x01,0x01,0x00,0x00,0x01,0x01,0x01,0x00,0x80,0x70,0x0C,0x10,0x60,0x80,0x00,
+
+/*--  文字:  w  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x01,0x01,0x00,0x01,0x00,0x01,0x01,0x01,0xF0,0x0C,0x30,0xC0,0x30,0x0C,0xF0,0x00,
+
+/*--  文字:  x  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x01,0x01,0x00,0x01,0x01,0x01,0x00,0x00,0x04,0x8C,0x74,0x70,0x8C,0x04,0x00,
+
+/*--  文字:  y  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x01,0x01,0x01,0x00,0x00,0x01,0x01,0x01,0x01,0x81,0x71,0x0E,0x18,0x60,0x80,0x00,
+
+/*--  文字:  z  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x01,0x01,0x01,0x01,0x01,0x01,0x00,0x00,0x84,0x0C,0x34,0x44,0x84,0x0C,0x00,
+
+/*--  文字:  A  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x00,0x03,0x1C,0x07,0x00,0x00,0x00,0x04,0x3C,0xC4,0x40,0x40,0xE4,0x1C,0x04,
+
+/*--  文字:  B  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x10,0x1F,0x11,0x11,0x11,0x0E,0x00,0x00,0x04,0xFC,0x04,0x04,0x04,0x88,0x70,0x00,
+
+/*--  文字:  C  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x03,0x0C,0x10,0x10,0x10,0x10,0x1C,0x00,0xE0,0x18,0x04,0x04,0x04,0x08,0x10,0x00,
+
+/*--  文字:  D  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x10,0x1F,0x10,0x10,0x10,0x08,0x07,0x00,0x04,0xFC,0x04,0x04,0x04,0x08,0xF0,0x00,
+
+/*--  文字:  E  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x10,0x1F,0x11,0x11,0x17,0x10,0x08,0x00,0x04,0xFC,0x04,0x04,0xC4,0x04,0x18,0x00,
+
+/*--  文字:  F  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x10,0x1F,0x11,0x11,0x17,0x10,0x08,0x00,0x04,0xFC,0x04,0x00,0xC0,0x00,0x00,0x00,
+
+/*--  文字:  G  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x03,0x0C,0x10,0x10,0x10,0x1C,0x00,0x00,0xE0,0x18,0x04,0x04,0x44,0x78,0x40,0x00,
+
+/*--  文字:  H  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x10,0x1F,0x10,0x00,0x00,0x10,0x1F,0x10,0x04,0xFC,0x84,0x80,0x80,0x84,0xFC,0x04,
+
+/*--  文字:  I  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x10,0x10,0x1F,0x10,0x10,0x00,0x00,0x00,0x04,0x04,0xFC,0x04,0x04,0x00,0x00,
+
+/*--  文字:  J  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x00,0x10,0x10,0x1F,0x10,0x10,0x00,0x03,0x01,0x01,0x01,0xFE,0x00,0x00,0x00,
+
+/*--  文字:  K  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x10,0x1F,0x11,0x03,0x14,0x18,0x10,0x00,0x04,0xFC,0x04,0x80,0x64,0x1C,0x04,0x00,
+
+/*--  文字:  L  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x10,0x1F,0x10,0x00,0x00,0x00,0x00,0x00,0x04,0xFC,0x04,0x04,0x04,0x04,0x0C,0x00,
+
+/*--  文字:  M  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x10,0x1F,0x1F,0x00,0x1F,0x1F,0x10,0x00,0x04,0xFC,0x00,0xFC,0x00,0xFC,0x04,0x00,
+
+/*--  文字:  N  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x10,0x1F,0x0C,0x03,0x00,0x10,0x1F,0x10,0x04,0xFC,0x04,0x00,0xE0,0x18,0xFC,0x00,
+
+/*--  文字:  O  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x07,0x08,0x10,0x10,0x10,0x08,0x07,0x00,0xF0,0x08,0x04,0x04,0x04,0x08,0xF0,0x00,
+
+/*--  文字:  P  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x10,0x1F,0x10,0x10,0x10,0x10,0x0F,0x00,0x04,0xFC,0x84,0x80,0x80,0x80,0x00,0x00,
+
+/*--  文字:  Q  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x07,0x08,0x10,0x10,0x10,0x08,0x07,0x00,0xF0,0x18,0x24,0x24,0x1C,0x0A,0xF2,0x00,
+
+/*--  文字:  R  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x10,0x1F,0x11,0x11,0x11,0x11,0x0E,0x00,0x04,0xFC,0x04,0x00,0xC0,0x30,0x0C,0x04,
+
+/*--  文字:  S  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x0E,0x11,0x10,0x10,0x10,0x1C,0x00,0x00,0x1C,0x04,0x84,0x84,0x44,0x38,0x00,
+
+/*--  文字:  T  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x18,0x10,0x10,0x1F,0x10,0x10,0x18,0x00,0x00,0x00,0x04,0xFC,0x04,0x00,0x00,0x00,
+
+/*--  文字:  U  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x10,0x1F,0x10,0x00,0x00,0x10,0x1F,0x10,0x00,0xF8,0x04,0x04,0x04,0x04,0xF8,0x00,
+
+/*--  文字:  V  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x10,0x1E,0x11,0x00,0x00,0x13,0x1C,0x10,0x00,0x00,0xE0,0x1C,0x70,0x80,0x00,0x00,
+
+/*--  文字:  W  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x1F,0x10,0x00,0x1F,0x00,0x10,0x1F,0x00,0xC0,0x3C,0xE0,0x00,0xE0,0x3C,0xC0,0x00,
+
+/*--  文字:  X  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x10,0x18,0x16,0x01,0x01,0x16,0x18,0x10,0x04,0x0C,0x34,0xC0,0xC0,0x34,0x0C,0x04,
+
+/*--  文字:  Y  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x10,0x1C,0x13,0x00,0x13,0x1C,0x10,0x00,0x00,0x00,0x04,0xFC,0x04,0x00,0x00,0x00,
+
+/*--  文字:  Z  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x08,0x10,0x10,0x10,0x13,0x1C,0x10,0x00,0x04,0x1C,0x64,0x84,0x04,0x04,0x18,0x00,
+
+/*--  文字:  .  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x0C,0x0C,0x00,0x00,0x00,0x00,0x00,
+
+/*--  文字:  _  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x01,0x01,0x01,0x01,0x01,0x01,0x01,0x01,
+
+/*--  文字:  +  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x00,0x00,0x0F,0x00,0x00,0x00,0x00,0x80,0x80,0x80,0xF8,0x80,0x80,0x80,0x00,
+
+/*--  文字:  -  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x80,0x80,0x80,0x80,0x80,0x80,0x80,
+
+/*--  文字:  ,  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x01,0x0D,0x0E,0x00,0x00,0x00,0x00,0x00,
+
+/*--  文字:  :  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x00,0x00,0x03,0x03,0x00,0x00,0x00,0x00,0x00,0x00,0x0C,0x0C,0x00,0x00,0x00,
+
+/*--  文字:     --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+
+/*--  文字:  ;  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x00,0x00,0x01,0x00,0x00,0x00,0x00,0x00,0x00,0x01,0x06,0x00,0x00,0x00,0x00,
+
+/*--  文字:  /  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x00,0x00,0x00,0x01,0x06,0x18,0x20,0x00,0x06,0x18,0x60,0x80,0x00,0x00,0x00,
+
+/*--  文字:  [  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x00,0x00,0x7F,0x40,0x40,0x40,0x00,0x00,0x00,0x00,0xFE,0x02,0x02,0x02,0x00,
+
+/*--  文字:  ]  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x40,0x40,0x40,0x7F,0x00,0x00,0x00,0x00,0x02,0x02,0x02,0xFE,0x00,0x00,0x00,
+
+/*--  文字:  <  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x00,0x01,0x02,0x04,0x08,0x10,0x00,0x00,0x80,0x40,0x20,0x10,0x08,0x04,0x00,
+
+/*--  文字:  >  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x10,0x08,0x04,0x02,0x01,0x00,0x00,0x00,0x04,0x08,0x10,0x20,0x40,0x80,0x00,
+
+/*--  文字:  |  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x00,0x00,0x00,0xFF,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0xFF,0x00,0x00,0x00,
+
+};
+
+
+const uint8 Software_Version_V10[] = {
+/*--  文字:  S  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x0E,0x11,0x10,0x10,0x10,0x1C,0x00,0x00,0x1C,0x04,0x84,0x84,0x44,0x38,0x00,
+
+/*--  文字:  o  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x00,0x01,0x01,0x01,0x01,0x00,0x00,0x00,0xF8,0x04,0x04,0x04,0x04,0xF8,0x00,
+
+/*--  文字:  f  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x01,0x01,0x0F,0x11,0x11,0x11,0x18,0x00,0x04,0x04,0xFC,0x04,0x04,0x00,0x00,
+
+/*--  文字:  t  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x01,0x01,0x07,0x01,0x01,0x00,0x00,0x00,0x00,0x00,0xF8,0x04,0x04,0x00,0x00,
+
+/*--  文字:  w  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x01,0x01,0x00,0x01,0x00,0x01,0x01,0x01,0xF0,0x0C,0x30,0xC0,0x30,0x0C,0xF0,0x00,
+
+/*--  文字:  a  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x00,0x01,0x01,0x01,0x01,0x00,0x00,0x00,0x98,0x24,0x44,0x44,0x44,0xFC,0x04,
+
+/*--  文字:  r  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x01,0x01,0x01,0x00,0x01,0x01,0x01,0x00,0x04,0x04,0xFC,0x84,0x04,0x00,0x80,0x00,
+
+/*--  文字:  e  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x00,0x01,0x01,0x01,0x01,0x00,0x00,0x00,0xF8,0x44,0x44,0x44,0x44,0xC8,0x00,
+
+/*--  文字:     --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+
+/*--  文字:  V  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x10,0x1E,0x11,0x00,0x00,0x13,0x1C,0x10,0x00,0x00,0xE0,0x1C,0x70,0x80,0x00,0x00,
+
+/*--  文字:  e  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x00,0x01,0x01,0x01,0x01,0x00,0x00,0x00,0xF8,0x44,0x44,0x44,0x44,0xC8,0x00,
+
+/*--  文字:  r  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x01,0x01,0x01,0x00,0x01,0x01,0x01,0x00,0x04,0x04,0xFC,0x84,0x04,0x00,0x80,0x00,
+
+/*--  文字:  s  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x00,0x01,0x01,0x01,0x01,0x01,0x00,0x00,0xCC,0x24,0x24,0x24,0x24,0x98,0x00,
+
+/*--  文字:  i  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x01,0x19,0x19,0x00,0x00,0x00,0x00,0x00,0x04,0x04,0xFC,0x04,0x04,0x00,0x00,
+
+/*--  文字:  o  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x00,0x01,0x01,0x01,0x01,0x00,0x00,0x00,0xF8,0x04,0x04,0x04,0x04,0xF8,0x00,
+
+/*--  文字:  n  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x01,0x01,0x00,0x01,0x01,0x01,0x00,0x00,0x04,0xFC,0x84,0x00,0x00,0x04,0xFC,0x04,
+
+/*--  文字:     --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+
+/*--  文字:  V  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x10,0x1E,0x11,0x00,0x00,0x13,0x1C,0x10,0x00,0x00,0xE0,0x1C,0x70,0x80,0x00,0x00,
+
+/*--  文字:  1  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x08,0x08,0x1F,0x00,0x00,0x00,0x00,0x00,0x04,0x04,0xFC,0x04,0x04,0x00,0x00,
+
+/*--  文字:  .  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x0C,0x0C,0x00,0x00,0x00,0x00,0x00,
+
+/*--  文字:  0  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=8x16   --*/
+0x00,0x07,0x08,0x10,0x10,0x08,0x07,0x00,0x00,0xF0,0x08,0x04,0x04,0x08,0xF0,0x00
+
+};
+
+const uint8 device_name[] = {
+/*--  文字:  宁  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=16x16   --*/
+0x04,0x18,0x11,0x11,0x11,0x11,0x91,0x71,0x11,0x11,0x11,0x11,0x11,0x14,0x18,0x00,
+0x00,0x00,0x00,0x00,0x00,0x02,0x01,0xFE,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+
+/*--  文字:  波  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=16x16   --*/
+0x08,0x06,0x40,0x30,0x03,0x00,0x1F,0x11,0x11,0x11,0xFF,0x11,0x11,0x15,0x18,0x00,
+0x20,0x20,0x3E,0xC0,0x01,0x06,0xF8,0x01,0xC2,0x34,0x08,0x14,0x62,0x81,0x01,0x00,
+
+/*--  文字:  地  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=16x16   --*/
+0x04,0x04,0x04,0xFF,0x04,0x04,0x01,0x1F,0x01,0x02,0xFF,0x04,0x08,0x0F,0x00,0x00,
+0x08,0x0C,0x08,0xF0,0x10,0x10,0x00,0xFC,0x02,0x02,0xFA,0x42,0x22,0xC2,0x1E,0x00,
+
+/*--  文字:  铁  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=16x16   --*/
+0x04,0x08,0x34,0xE7,0x24,0x24,0x02,0x3C,0x08,0x08,0xFF,0x08,0x08,0x08,0x00,0x00,
+0x80,0x80,0x80,0xFE,0x84,0x88,0x01,0x82,0x8C,0xB0,0xC0,0xB0,0x8C,0x82,0x81,0x00,
+
+/*--  文字:  二  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=16x16   --*/
+0x00,0x00,0x10,0x10,0x10,0x10,0x10,0x10,0x10,0x10,0x10,0x10,0x10,0x00,0x00,0x00,
+0x08,0x08,0x08,0x08,0x08,0x08,0x08,0x08,0x08,0x08,0x08,0x08,0x08,0x08,0x08,0x00,
+
+/*--  文字:  号  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=16x16   --*/
+0x01,0x01,0x01,0x7D,0x45,0x45,0x45,0x45,0x45,0x45,0x45,0x7D,0x01,0x01,0x01,0x00,
+0x00,0x00,0x00,0x60,0xA0,0x20,0x20,0x20,0x22,0x21,0x22,0x3C,0x00,0x00,0x00,0x00,
+
+/*--  文字:  线  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=16x16   --*/
+0x04,0x0C,0x35,0xC6,0x04,0x18,0x01,0x09,0x09,0xFF,0x09,0x92,0x52,0x12,0x02,0x00,
+0x44,0xE6,0x44,0x48,0x48,0x48,0x02,0x02,0x04,0xC8,0x30,0x28,0x44,0x82,0x1F,0x00,
+
+/*--  文字:  车  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=16x16   --*/
+0x00,0x10,0x11,0x12,0x14,0x18,0xF0,0x17,0x10,0x10,0x10,0x10,0x10,0x10,0x00,0x00,
+0x10,0x10,0x90,0x90,0x90,0x90,0x90,0xFF,0x90,0x90,0x90,0x90,0x90,0x10,0x10,0x00,
+
+/*--  文字:  头  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=16x16   --*/
+0x00,0x00,0x08,0x06,0x20,0x18,0x00,0x00,0xFF,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+0x81,0x81,0x82,0x82,0x84,0x88,0x90,0xE0,0x80,0xA0,0x90,0x88,0x84,0x83,0x80,0x00,
+
+/*--  文字:  显  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=16x16   --*/
+0x00,0x00,0x00,0x7F,0x49,0x49,0x49,0x49,0x49,0x49,0x49,0x7F,0x00,0x00,0x00,0x00,
+0x02,0x42,0x22,0x1A,0x02,0xFE,0x02,0x02,0x02,0xFE,0x02,0x0A,0x12,0x62,0x02,0x00,
+
+/*--  文字:  示  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=16x16   --*/
+0x02,0x02,0x42,0x42,0x42,0x42,0x42,0x43,0x42,0x42,0x42,0x42,0x42,0x02,0x02,0x00,
+0x04,0x08,0x10,0x60,0x00,0x02,0x01,0xFE,0x00,0x00,0x00,0x40,0x20,0x10,0x0C,0x00,
+
+/*--  文字:  屏  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=16x16   --*/
+0x00,0x00,0x7F,0x48,0x49,0x4D,0x4B,0x49,0x49,0x49,0x4B,0x4D,0x79,0x00,0x00,0x00,
+0x02,0x0C,0xF0,0x20,0x21,0x26,0xF8,0x20,0x20,0x20,0xFF,0x20,0x20,0x20,0x00,0x00
+
+};
+
+const uint8 ceshizhong[] = {
+/*--  文字:  测  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=16x16   --*/
+0x08,0x06,0x40,0x31,0x00,0x7F,0x40,0x4F,0x40,0x7F,0x00,0x1F,0x00,0xFF,0x00,0x00,
+0x20,0x20,0x7E,0x80,0x01,0xE2,0x0C,0xF0,0x08,0xE4,0x00,0xE2,0x01,0xFE,0x00,0x00,
+
+/*--  文字:  试  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=16x16   --*/
+0x02,0x02,0x42,0x33,0x00,0x09,0x09,0x09,0x09,0x09,0xFF,0x08,0x88,0x68,0x08,0x00,
+0x00,0x00,0x00,0xFC,0x08,0x14,0x06,0xFC,0x08,0x08,0x80,0x70,0x0C,0x02,0x0F,0x00,
+
+/*--  文字:  中  --*/
+/*--  宋体12;  此字体下对应的点阵为：宽x高=16x16   --*/
+0x00,0x00,0x0F,0x08,0x08,0x08,0x08,0xFF,0x08,0x08,0x08,0x08,0x0F,0x00,0x00,0x00,
+0x00,0x00,0xF0,0x20,0x20,0x20,0x20,0xFF,0x20,0x20,0x20,0x20,0xF0,0x00,0x00,0x00
+
+};
+
+//1个字符纵向取模方式转换为可以向显示缓冲拷贝的字节流 
+void Vertical_8_16_to_dispbuf(uint8 *dst, uint8 *src)
+{
+	uint8 i;
+	uint8 tmp[8][2];
+
+	for(i = 0; i < 16; i++) {
+		tmp[i%8][i/8] = src[i]^0xff;
+	}
+
+	memcpy(dst, tmp, 16);
+}
+
+//1个汉字纵向取模方式转换为可以向显示缓冲拷贝的字节流 
+void Vertical_16_16_to_dispbuf(uint8 *dst, uint8 *src)
+{
+	uint8 i;
+	uint8 tmp[16][2];
+
+	for(i = 0; i < 32; i++) {
+		tmp[i%16][i/16] = src[i]^0xff;
+	}
+
+	memcpy(dst, tmp, 32);
+}
+
+void static_test_fill_ledbuf(void)
+{
+#if 0
+//	uint16 col_sum_roll = 0;
+	uint16 i;
+	uint8 *dst = &red_CN[0][0];
+	uint8 *src = (uint8 *)ceshizhong;
+	uint8 *p_tmp = &red_CN[0][0];
+
+	for (i = 0 ; i < sizeof(ceshizhong)/32; i++) {
+		dst=p_tmp+2*(COL_SUM/2)+i*32;
+		if (dst+32 > p_tmp+sizeof(red_CN))
+			break;
+		Vertical_16_16_to_dispbuf(dst,src+i*32);
+	}
+#else
+//	uint16 col_sum_roll = 0;
+	uint16 i;
+	uint16 col;
+	uint8 *dst = &red_CN[0][0];
+	uint8 *src = (uint8 *)ceshizhong;
+	uint8 *p_tmp = &red_CN[0][0];
+
+	col = (sizeof(ceshizhong)+1)/2;
+
+	if ( col > COL_SUM)
+		return;
+	
+	for (i = 0 ; i < sizeof(ceshizhong)/32; i++) {
+		dst=p_tmp+2*((COL_SUM-col)/2)+i*32;
+		if (dst+32 > p_tmp+sizeof(red_CN))
+			break;
+		Vertical_16_16_to_dispbuf(dst,src+i*32);
+	}
+#endif
+}
+
+#if 1
+uint16 test_fill_ledbuf(void)
+{
+	uint8 *dst;
+	uint8 *src;
+	uint8 *p_tmp = &ledbuf_tmp1[0][0];
+	
+	char build_date[20] = "";
+	char build_time[20] = "";
+	char tmp_char[200] = "";
+	char sw_version[40] = "";
+	char dev_addr[20] = "";
+
+	uint16 col_sum_roll = 0;
+	uint16 i;
+	uint16 j;
+	uint16 index;
+	uint16 len_char_tbl;
+	uint16 char_sum;
+
+	sprintf(sw_version, "%s", "| Ver.");
+{
+	char tmp[20];
+	uint8 len_version;
+	uint8 i;
+	len_version = sizeof(software_version);
+
+	memset(tmp, 0, sizeof(tmp));
+	for (i = 0; i < len_version; i++) {
+		if (i == (len_version-1)) {
+			sprintf(tmp, "%d;", software_version[i]);
+			strcat(sw_version, tmp);
+		}
+		else {
+			sprintf(tmp, "%d.", software_version[i]);
+			strcat(sw_version, tmp);
+		}
+	}
+}
+	sprintf(dev_addr, "Addr.%d;", ProtocolLocalInfo.DevId);
+	sprintf(build_date, "Build.%s,", build_date_str);
+	sprintf(build_time, "%s; ", build_time_str);
+	
+	//memset(tmp_char, 0, sizeof(tmp_char));
+	sprintf(tmp_char, "%s", sw_version);
+	//strcat(tmp_char, sw_version);
+	strcat(tmp_char, dev_addr);
+	strcat(tmp_char, build_date);
+	strcat(tmp_char, build_time);
+
+	if (strlen(tmp_char) == 0) {
+		sprintf(tmp_char, "%s", " ");
+	}
+	
+	len_char_tbl = sizeof(char_tbl)/sizeof(TAG_CHAR_TBL);
+	char_sum = 0;
+	for (i = 0; i < strlen(tmp_char); i++) {
+		for (j = 0; j < len_char_tbl; j++) {
+			if (tmp_char[i] == char_tbl[j].character) {
+				index = char_tbl[j].index;
+				break;
+			}
+		}
+		if (j < len_char_tbl) {	
+			dst = p_tmp+i*16;
+			src = (uint8 *)&zimo[index*16];
+			Vertical_8_16_to_dispbuf(dst, src);
+			char_sum++;
+		}
+		
+	}
+	col_sum_roll = char_sum*8;
+	return col_sum_roll;
+}
+
+#else
+uint16 test_fill_ledbuf(void)
+{
+	uint16 col_sum_roll = 0;
+	uint16 i;
+	uint8 *dst = &ledbuf_tmp1[0][0];
+	uint8 *src = (uint8 *)device_name;
+	uint8 *p_tmp = &ledbuf_tmp1[0][0];
+	
+	for (i = 0 ; i < sizeof(device_name)/32; i++) {
+		dst=p_tmp+i*32;
+		Vertical_16_16_to_dispbuf(dst,src+i*32);
+	}
+
+	//col_sum_roll = 16*(sizeof(device_name)/32);
+	//return col_sum_roll;
+	#if 1
+	p_tmp+=i*32;
+	src = (uint8 *)Software_Version_V10;
+	for (i = 0; i < sizeof(Software_Version_V10)/16; i++) {
+		dst=p_tmp+i*16;
+		Vertical_8_16_to_dispbuf(dst, src+i*16);
+	}
+	col_sum_roll = 16*(sizeof(device_name)/32) + 8*(sizeof(Software_Version_V10)/16);
+
+	
+	return col_sum_roll;
+	#endif
+}
+#endif
+
+
+void clr_led_buf(void)
+{
+
+	memset(red_CN, 0xff, sizeof(red_CN));
+	memset(green_CN, 0xff, sizeof(green_CN));
+	memset(red_EN, 0xff, sizeof(red_EN));
+	memset(green_EN, 0xff, sizeof(green_EN));
+	memset(ledbuf_tmp, 0xff, sizeof(ledbuf_tmp));
+	memset(ledbuf_tmp1, 0xff, sizeof(ledbuf_tmp1));
+	memset(red_tmp, 0xff, sizeof(red_tmp));
+	memset(green_tmp, 0xff, sizeof(green_tmp));
+	
+}
+
+void turn_off_screen_clrbuf(void)
+{
+	set_138E();
+	clr_led_buf();
+	
+}
+void turn_off_screen(void)
+{
+	set_138E();
+}
+
+
+void ledscreen_init(void)
+{
+	clr_dispinfo();
+	turn_off_screen_clrbuf();
+	
+}
+
+
+
+
+typedef struct {
+	uint8 mode;
+	uint8 *param;
+	uint16 len;
+}TAG_SEL_MODE;
+TAG_SEL_MODE sel_screen_MODE = {
+	SCREEN_MODE_softwareVersion,
+	NULL,
+	0
+};
+
+typedef struct {
+	uint16	parm_DISP_COL_TAIL;		//  
+	uint16	parm_DISP_COL_HEAD;		//
+	uint16	parm_DIV;		//每次移动的列数 1 - 7
+	uint16	parm_FILL_COLsum_tail;		//ledbuf_tmp尾部填充的空列数
+	uint16	parm_FILL_COLsum_head;//
+}TAG_disp_param_SCREEN_MODE_softwareVersion;
+
+TAG_disp_param_SCREEN_MODE_softwareVersion disp_param_SCREEN_MODE_softwareVersion;
+
+void set_dispmode_SCREEN_MODE_softwareVersion(void)
+{
+	disp_param_SCREEN_MODE_softwareVersion.parm_DISP_COL_HEAD = 0;
+	disp_param_SCREEN_MODE_softwareVersion.parm_DISP_COL_TAIL = 47;
+	disp_param_SCREEN_MODE_softwareVersion.parm_DIV = 1;
+	disp_param_SCREEN_MODE_softwareVersion.parm_FILL_COLsum_head = 32;
+	disp_param_SCREEN_MODE_softwareVersion.parm_FILL_COLsum_tail = 16;
+
+	sel_screen_MODE.mode = SCREEN_MODE_softwareVersion;
+	sel_screen_MODE.param = (uint8 *)&disp_param_SCREEN_MODE_softwareVersion;
+	sel_screen_MODE.len = sizeof(disp_param_SCREEN_MODE_softwareVersion);
+}
+
+void dispcall_SCREEN_MODE_softwareVersion(uint8 mode_change, void *param, uint16 len)
+{
+	static uint16 col = 0;
+	if (mode_change) {
+		clr_led_buf();
+		col = test_fill_ledbuf();
+	}
+	if (!col) {
+		clr_led_buf();
+		return;
+	}
+
+	//if (!len) {
+		DISP_COL_TAIL	=COL_SUM-1;		//  
+		DISP_COL_HEAD	=0;		//
+		DIV				=1;		//每次移动的列数 1 - 7
+		FILL_COLsum_tail		=16;		//ledbuf_tmp尾部填充的空列数
+		FILL_COLsum_head	=COL_SUM;//
+	//}
+	
+	if(refresh_flag)
+		{
+			refresh_flag = 0;
+			screen_roll(col, COLOR_RED);
+		}
+	
+}
+
+
+void set_dispmode_SCREEN_MODE_test(void)
+{
+	sel_screen_MODE.mode = SCREEN_MODE_test;
+	sel_screen_MODE.param = NULL;
+	sel_screen_MODE.len = NULL;
+}
+
+void dispcall_SCREEN_MODE_test(uint8 mode_change, void *param, uint16 len)
+{
+	uint16 col = 8;
+	uint8 i;
+	if (mode_change) {
+		clr_led_buf();
+
+		for (i = 0; i < col; i++) {
+			ledbuf_tmp1[i][0] = (1<<i)^0xff;
+			ledbuf_tmp1[i][1] = (1<<i)^0xff;
+		}
+		
+	}
+
+	//if (!len) {
+		DISP_COL_TAIL	=COL_SUM-1;		//  
+		DISP_COL_HEAD	=0;		//
+		DIV				=1;		//每次移动的列数 1 - 7
+		FILL_COLsum_tail		=16;		//ledbuf_tmp尾部填充的空列数
+		FILL_COLsum_head	=COL_SUM;//
+	//}
+	
+	if(refresh_flag)
+		{
+			refresh_flag = 0;
+			screen_roll(col, COLOR_RED);
+		}
+	
+}
+
+void set_dispmode_SCREEN_MODE_static_test(void)
+{
+	sel_screen_MODE.mode = SCREEN_MODE_static_test;
+	sel_screen_MODE.param = NULL;
+	sel_screen_MODE.len = NULL;
+}
+
+void set_dispmode_SCREEN_MODE_off(void)
+{
+	sel_screen_MODE.mode = SCREEN_MODE_off;	//NULL;	//
+	sel_screen_MODE.param = NULL;
+	sel_screen_MODE.len = NULL;
+}
+
+void set_dispmode_SCREEN_MODE_stationID(void)
+{
+	sel_screen_MODE.mode = SCREEN_MODE_stationID;	//NULL;	//
+	sel_screen_MODE.param = NULL;
+	sel_screen_MODE.len = NULL;
+}
+void dispcall_SCREEN_MODE_off(uint8 mode_change, void *param, uint16 len)
+{
+	
+	if (mode_change) {
+		clr_led_buf();
+	}
+}
+
+#if 0
+void callback_SCREEN_MODE_stationID_m2(uint8 mode_change, void *param, uint16 len)
+{
+	uint16 cn_displen;
+	uint16 en_displen;
+	uint16 fill_space;
+	uint16 col;
+	uint16 col_st;
+	uint8 *p;
+
+	//turn_off_screen();
+	cn_displen = netCNDispInfo.dispDataLen;
+	en_displen = netENDispInfo.dispDataLen;
+
+	if ((cn_displen > 1024) || (en_displen > 1024))
+		return;
+
+	if ((cn_displen == 0) && (en_displen ==0)) {
+		memset(red_EN, 0xff, sizeof(red_EN));
+		memset(red_CN, 0xff, sizeof(red_CN));
+		return;
+	}
+	
+	if (cn_displen)
+		fill_space = 8;
+	else
+		fill_space = 0;
+
+	if (en_displen) {
+		col = ((cn_displen+1)/2+ en_displen + fill_space);
+	}
+	else {
+		col = (cn_displen+1)/2;
+	}
+	fill_space = fill_space*2;
+	
+
+	if ( col > COL_SUM) {
+		memset(ledbuf_tmp1, 0xff, sizeof(ledbuf_tmp1));
+		memcpy(ledbuf_tmp1, netCNDispInfo.dispData, cn_displen);
+		p = (uint8 *)ledbuf_tmp1;
+		
+		//memcpy(p+fill_space+ 2*((cn_displen+1)/2), netENDispInfo.dispData, en_displen);
+
+		{
+			int j;
+			int offset = fill_space+ 2*((cn_displen+1)/2);
+			for (j = 0; j < en_displen; j++) {
+				p[offset+j*2+1] = netENDispInfo.dispData[j];
+			}
+		}
+
+
+		//if (!len) {
+		DISP_COL_TAIL	=COL_SUM-1;		//  
+		DISP_COL_HEAD	=0;		//
+		DIV				=1;		//每次移动的列数 1 - 7
+		FILL_COLsum_tail		=16;		//ledbuf_tmp尾部填充的空列数
+		FILL_COLsum_head	=COL_SUM;//
+	//}
+	
+		if(refresh_flag)
+			{
+				refresh_flag = 0;
+				screen_roll(col, COLOR_RED);
+			}
+	}
+	else {
+
+		col_st = 2*((COL_SUM-col)/2);
+		memset(red_EN, 0xff, sizeof(red_EN));
+		memset(red_CN, 0xff, sizeof(red_CN));
+		p = (uint8 *)red_CN;
+		memcpy(p+col_st, netCNDispInfo.dispData, cn_displen);
+		//memcpy(p+col_st+fill_space+2*((cn_displen+1)/2), netENDispInfo.dispData, en_displen);
+		{
+			int j;
+			int offset = col_st+ 2*((cn_displen+1)/2);
+			for (j = 0; j < en_displen; j++) {
+				p[offset+j*2+1] = netENDispInfo.dispData[j];
+			}
+		}
+	}
+
+}
+#else
+#if 0
+// 不居中
+void callback_SCREEN_MODE_stationID_m2(uint8 mode_change, void *param, uint16 len)
+{
+	uint16 cn_displen;
+	uint16 en_displen;
+	uint16 fill_space;
+	uint16 col;
+	uint16 col_st;
+	uint8 *p;
+
+	//turn_off_screen();
+	cn_displen = netCNDispInfo.dispDataLen;
+	en_displen = netENDispInfo.dispDataLen;
+
+	if ((cn_displen > 1024) || (en_displen > 1024))
+		return;
+
+	if ((cn_displen == 0) && (en_displen ==0)) {
+		memset(red_EN, 0xff, sizeof(red_EN));
+		memset(red_CN, 0xff, sizeof(red_CN));
+		return;
+	}
+	
+	if (cn_displen)
+		fill_space = 8;
+	else
+		fill_space = 0;
+
+	if (en_displen) {
+		col = ((cn_displen+1)/2+(en_displen+1)/2 + fill_space);
+	}
+	else {
+		col = (cn_displen+1)/2;
+	}
+	fill_space = fill_space*2;
+	
+
+	if ( col > COL_SUM) {
+		memset(ledbuf_tmp1, 0xff, sizeof(ledbuf_tmp1));
+		memcpy(ledbuf_tmp1, netCNDispInfo.dispData, cn_displen);
+		p = (uint8 *)ledbuf_tmp1;
+		memcpy(p+fill_space+ 2*((cn_displen+1)/2), netENDispInfo.dispData, en_displen);
+
+
+		//if (!len) {
+		DISP_COL_TAIL	=COL_SUM-1;		//  
+		DISP_COL_HEAD	=0;		//
+		DIV				=1;		//每次移动的列数 1 - 7
+		FILL_COLsum_tail		=16;		//ledbuf_tmp尾部填充的空列数
+		FILL_COLsum_head	=COL_SUM;//
+	//}
+	
+		if(refresh_flag)
+			{
+				refresh_flag = 0;
+				screen_roll(col, COLOR_RED);
+			}
+	}
+	else {
+
+		col_st = 0;	//2*((COL_SUM-col)/2);
+		memset(red_EN, 0xff, sizeof(red_EN));
+		memset(red_CN, 0xff, sizeof(red_CN));
+		p = (uint8 *)red_CN;
+		memcpy(p+col_st, netCNDispInfo.dispData, cn_displen);
+		memcpy(p+col_st+fill_space+2*((cn_displen+1)/2), netENDispInfo.dispData, en_displen);
+	}
+
+}
+#else
+void callback_SCREEN_MODE_stationID_m2(uint8 mode_change, void *param, uint16 len)
+{
+	uint16 cn_displen;
+	uint16 en_displen;
+	uint16 fill_space;
+	uint16 col;
+	uint16 col_st;
+	uint8 *p;
+
+	//turn_off_screen();
+	cn_displen = netCNDispInfo.dispDataLen;
+	en_displen = netENDispInfo.dispDataLen;
+
+	if ((cn_displen > 1024) || (en_displen > 1024))
+		return;
+
+	if ((cn_displen == 0) && (en_displen ==0)) {
+		memset(red_EN, 0xff, sizeof(red_EN));
+		memset(red_CN, 0xff, sizeof(red_CN));
+		return;
+	}
+	
+	if (cn_displen)
+		fill_space = 8;
+	else
+		fill_space = 0;
+
+	if (en_displen) {
+		col = ((cn_displen+1)/2+(en_displen+1)/2 + fill_space);
+	}
+	else {
+		col = (cn_displen+1)/2;
+	}
+	fill_space = fill_space*2;
+	
+
+	if ( col > COL_SUM) {
+		memset(ledbuf_tmp1, 0xff, sizeof(ledbuf_tmp1));
+		memcpy(ledbuf_tmp1, netCNDispInfo.dispData, cn_displen);
+		p = (uint8 *)ledbuf_tmp1;
+		memcpy(p+fill_space+ 2*((cn_displen+1)/2), netENDispInfo.dispData, en_displen);
+
+
+		//if (!len) {
+		DISP_COL_TAIL	=COL_SUM-1;		//  
+		DISP_COL_HEAD	=0;		//
+		DIV				=1;		//每次移动的列数 1 - 7
+		FILL_COLsum_tail		=16;		//ledbuf_tmp尾部填充的空列数
+		FILL_COLsum_head	=COL_SUM;//
+	//}
+	
+		if(refresh_flag)
+			{
+				refresh_flag = 0;
+				screen_roll(col, COLOR_RED);
+			}
+	}
+	else {
+
+		col_st = 2*((COL_SUM-col)/2);
+		memset(red_EN, 0xff, sizeof(red_EN));
+		memset(red_CN, 0xff, sizeof(red_CN));
+		p = (uint8 *)red_CN;
+		memcpy(p+col_st, netCNDispInfo.dispData, cn_displen);
+		memcpy(p+col_st+fill_space+2*((cn_displen+1)/2), netENDispInfo.dispData, en_displen);
+	}
+
+}
+
+#endif
+#endif
+void callback_SCREEN_MODE_stationID_m1(uint8 mode_change, void *param, uint16 len)
+{
+	uint16 cn_displen;
+//	uint16 fill_space;
+	uint16 col;
+	uint16 col_st;
+	uint8 *p;
+
+	//turn_off_screen();
+	cn_displen = netCNDispInfo.dispDataLen;
+
+	if (cn_displen > 1024)
+		return;
+
+	if (cn_displen == 0) {
+		memset(red_EN, 0xff, sizeof(red_EN));
+		memset(red_CN, 0xff, sizeof(red_CN));
+		return;
+	}
+	
+	col = (cn_displen+1)/2;
+	
+
+	if ( col > COL_SUM) {
+		memset(ledbuf_tmp1, 0xff, sizeof(ledbuf_tmp1));
+		memcpy(ledbuf_tmp1, netCNDispInfo.dispData, cn_displen);
+
+
+		//if (!len) {
+		DISP_COL_TAIL	=COL_SUM-1;		//  
+		DISP_COL_HEAD	=0;		//
+		DIV				=1;		//每次移动的列数 1 - 7
+		FILL_COLsum_tail		=16;		//ledbuf_tmp尾部填充的空列数
+		FILL_COLsum_head	=COL_SUM;//
+	//}
+	
+		if(refresh_flag)
+			{
+				refresh_flag = 0;
+				screen_roll(col, COLOR_RED);
+			}
+	}
+	else {
+
+		col_st = 2*((COL_SUM-col)/2);
+		memset(red_EN, 0xff, sizeof(red_EN));
+		p = (uint8 *)red_CN;
+		memset(p, 0xff, sizeof(red_CN));
+		memcpy(p+col_st, netCNDispInfo.dispData, cn_displen);
+	}
+
+}
+typedef void (* Callback_dispmode_sel2)(uint8 mode_change, void *param, uint16 len);
+typedef struct {
+	uint8 mode;
+	Callback_dispmode_sel2 callback;
+}TAG_SCREEN_MODE_stationID_SEL2;
+
+#define SCREEN_MODE_stationID_m1	1
+#define SCREEN_MODE_stationID_m2	2
+TAG_SCREEN_MODE_stationID_SEL2 SCREEN_MODE_stationID_SEL2_tbl[] = {
+	//英文连接到中文之后显示 
+		{SCREEN_MODE_stationID_m1, callback_SCREEN_MODE_stationID_m1},
+	//只处理中文显示 	
+		{SCREEN_MODE_stationID_m2, callback_SCREEN_MODE_stationID_m2},
+		{NULL, NULL},
+		{NULL, NULL},
+		{NULL, NULL},
+		{NULL, NULL}
+};
+
+void dispcall_SCREEN_MODE_stationID(uint8 mode_change, void *param, uint16 len)
+{
+	uint8 index;
+	uint8 mode = 0;
+
+	//mode = SCREEN_MODE_stationID_m1;
+#if 1
+	mode = SCREEN_MODE_stationID_m1;
+#else
+	mode = SCREEN_MODE_stationID_m2;
+#endif
+
+	index = 0;
+	while (SCREEN_MODE_stationID_SEL2_tbl[index].callback != NULL) {
+		if (SCREEN_MODE_stationID_SEL2_tbl[index].mode == mode) {
+			SCREEN_MODE_stationID_SEL2_tbl[index].callback(mode_change, param, len);
+			break;
+		}
+		index++;
+	}
+}
+
+
+void dispcall_SCREEN_MODE_static_test(uint8 mode_change, void *param, uint16 len)
+{
+	
+	if (mode_change) {
+		clr_led_buf();
+		static_test_fill_ledbuf();
+	}
+}
+
+
+typedef void(* Callback_screen_dispMode)(uint8 mode_change, void *param, uint16 len);
+typedef struct {
+	uint8 mode;
+	Callback_screen_dispMode screen_dispMode_Callback;
+}TAG_SCREEN_DISPMODE;
+
+TAG_SCREEN_DISPMODE screen_mode_disp_tbl[] = {
+	{SCREEN_MODE_softwareVersion, 	dispcall_SCREEN_MODE_softwareVersion},
+	{SCREEN_MODE_test, 				dispcall_SCREEN_MODE_test},
+	{SCREEN_MODE_static_test, dispcall_SCREEN_MODE_static_test},
+	
+	{SCREEN_MODE_off, dispcall_SCREEN_MODE_off},
+	{SCREEN_MODE_stationID, dispcall_SCREEN_MODE_stationID},
+	{NULL, NULL}
+};
+
+typedef void(* Callback_set_dispmode)(void);
+typedef struct {
+	uint8 mode;
+	Callback_set_dispmode set_dispmode_Callback;
+}TAG_SET_DISPMODE;
+
+TAG_SET_DISPMODE screen_mode_set_tbl[] = {
+	{SCREEN_MODE_softwareVersion, 	set_dispmode_SCREEN_MODE_softwareVersion},
+	{SCREEN_MODE_test, 				set_dispmode_SCREEN_MODE_test},
+	{SCREEN_MODE_static_test, 		set_dispmode_SCREEN_MODE_static_test},
+
+	{SCREEN_MODE_off, set_dispmode_SCREEN_MODE_off},
+	{SCREEN_MODE_stationID, set_dispmode_SCREEN_MODE_stationID},
+	{NULL, NULL}
+};
+
+void set_dispmode(uint8 mode)
+{
+	uint8 index;
+
+	index = 0;
+	while (screen_mode_set_tbl[index].set_dispmode_Callback != NULL) {
+		if (screen_mode_set_tbl[index].mode == mode) {
+			screen_mode_set_tbl[index].set_dispmode_Callback();
+			break;
+		}
+		index++;
+	}
+}
+
+uint8 mode_index_tbl[] = {
+	SCREEN_MODE_softwareVersion,
+	SCREEN_MODE_off,
+	SCREEN_MODE_test, 
+	SCREEN_MODE_static_test,
+	SCREEN_MODE_stationID
+	
+};
+
+/*
+ * 0正常模式
+ *1坏点检测模式
+ *2程序版本显示
+*/
+uint8 ptu_SetMode = 0;	//正常模式
+
+void LedScreen_process(void)
+{
+	uint8 index;
+	uint8 new_mode;
+	uint8 flag;
+//	static uint16 col;
+	static TAG_SEL_MODE mode_tmp = {0, 0, 0};
+	static uint8 tmp = 1;
+//	static uint16 cnt = 0;
+	//static uint32 timer_1 = 0;
+	//static uint8 mode_index = 0;
+
+	if (tmp) {
+		
+		tmp =0;
+		memset(&sel_screen_MODE, 0, sizeof(sel_screen_MODE));
+		set_dispmode(mode_index_tbl[0]);
+		//set_dispmode(0);
+	}
+
+#if 0
+	if (timer0_check_timer(&timer_1, (uint32)TIMING_10s)) {
+		mode_index++;
+		if (mode_index >= sizeof(mode_index_tbl)) {
+			mode_index = 0;
+		}
+		set_dispmode(mode_index_tbl[mode_index]);
+	}
+#endif
+
+	index = 0;
+	flag = 0;
+
+	while (screen_mode_disp_tbl[index].screen_dispMode_Callback != NULL) {
+		if (screen_mode_disp_tbl[index].mode == sel_screen_MODE.mode) {
+			if (memcmp(&mode_tmp, &sel_screen_MODE,sizeof(TAG_SEL_MODE)) == 0) {
+				new_mode = 0;
+			}
+			else {
+				memcpy(&mode_tmp, &sel_screen_MODE,sizeof(TAG_SEL_MODE));
+				new_mode = 1;
+			}
+			screen_mode_disp_tbl[index].screen_dispMode_Callback(new_mode, sel_screen_MODE.param, sel_screen_MODE.len);
+			flag = 1;
+			break;
+		}
+		index++;
+	}
+
+	if (!flag) {
+		turn_off_screen_clrbuf();
+	}
+	else {
+		/*
+		if(refresh_flag)
+		{
+			refresh_flag = 0;
+			screen_roll(col, COLOR_RED);
+		}*/
+		
+		if(timer2_flag)
+		{
+			timer2_flag = 0;
+			Refresh_74HC595_status();
+		}
+	}
+	
+}
+
+
+
+
+

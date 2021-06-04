@@ -1,0 +1,7 @@
+const unsigned char updating[] = "<html>\
+<body>\
+<center>\
+	<h3><br />bootloader程序启动中...<br />请重新登陆设备,以验证程序更新是否成功。</h3>\
+</center>\
+</body>\
+</html>";

@@ -1,0 +1,3455 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\dvlp_prj.uvproj
+Project File Date:  06/26/2013
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling main.c...
+..\src\app\usr\main.c(411): error:  #144: a value of type "uint8 (*)[2]" cannot be used to initialize an entity of type "uint8 *"
+..\src\app\usr\main.c(412): error:  #144: a value of type "const uint8 *" cannot be used to initialize an entity of type "uint8 *"
+..\src\app\usr\main.c(418): warning:  #940-D: missing return statement at end of non-void function "test_fill_ledbuf"
+..\src\app\usr\main.c(409): warning:  #550-D: variable "col_sum_roll" was set but never used
+..\src\app\usr\main.c(526): error:  #137: expression must be a modifiable lvalue
+..\src\app\usr\main.c(613): warning:  #128-D: loop is not reachable from preceding code
+..\src\app\usr\main.c(428): warning:  #177-D: variable "j" was declared but never referenced
+..\src\app\usr\main.c(437): warning:  #550-D: variable "timer_1" was set but never used
+Target not created
+Build target 'Target 1'
+compiling main.c...
+..\src\app\usr\main.c(412): error:  #142: expression must have pointer-to-object type
+..\src\app\usr\main.c(418): warning:  #940-D: missing return statement at end of non-void function "test_fill_ledbuf"
+..\src\app\usr\main.c(409): warning:  #550-D: variable "col_sum_roll" was set but never used
+..\src\app\usr\main.c(526): error:  #137: expression must be a modifiable lvalue
+..\src\app\usr\main.c(613): warning:  #128-D: loop is not reachable from preceding code
+..\src\app\usr\main.c(428): warning:  #177-D: variable "j" was declared but never referenced
+..\src\app\usr\main.c(437): warning:  #550-D: variable "timer_1" was set but never used
+Target not created
+Build target 'Target 1'
+compiling main.c...
+..\src\app\usr\main.c(412): error:  #142: expression must have pointer-to-object type
+..\src\app\usr\main.c(415): error:  #167: argument of type "const uint8 *" is incompatible with parameter of type "uint8 *"
+..\src\app\usr\main.c(615): warning:  #128-D: loop is not reachable from preceding code
+..\src\app\usr\main.c(430): warning:  #177-D: variable "j" was declared but never referenced
+..\src\app\usr\main.c(439): warning:  #550-D: variable "timer_1" was set but never used
+Target not created
+Build target 'Target 1'
+compiling main.c...
+..\src\app\usr\main.c(412): error:  #142: expression must have pointer-to-object type
+..\src\app\usr\main.c(615): warning:  #128-D: loop is not reachable from preceding code
+..\src\app\usr\main.c(430): warning:  #177-D: variable "j" was declared but never referenced
+..\src\app\usr\main.c(439): warning:  #550-D: variable "timer_1" was set but never used
+Target not created
+Build target 'Target 1'
+compiling main.c...
+..\src\app\usr\main.c(411): error:  #144: a value of type "uint8 (*)[2]" cannot be used to initialize an entity of type "uint8 *"
+..\src\app\usr\main.c(615): warning:  #128-D: loop is not reachable from preceding code
+..\src\app\usr\main.c(430): warning:  #177-D: variable "j" was declared but never referenced
+..\src\app\usr\main.c(439): warning:  #550-D: variable "timer_1" was set but never used
+Target not created
+Build target 'Target 1'
+compiling main.c...
+..\src\app\usr\main.c(615): warning:  #128-D: loop is not reachable from preceding code
+..\src\app\usr\main.c(430): warning:  #177-D: variable "j" was declared but never referenced
+..\src\app\usr\main.c(439): warning:  #550-D: variable "timer_1" was set but never used
+linking...
+Program Size: Code=49524 RO-data=1188 RW-data=1168 ZI-data=80960  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 3 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.293V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling main.c...
+..\src\app\usr\main.c(615): warning:  #128-D: loop is not reachable from preceding code
+..\src\app\usr\main.c(430): warning:  #177-D: variable "j" was declared but never referenced
+..\src\app\usr\main.c(439): warning:  #550-D: variable "timer_1" was set but never used
+linking...
+Program Size: Code=49532 RO-data=1188 RW-data=1168 ZI-data=80960  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+..\src\app\usr\main.c(615): warning:  #128-D: loop is not reachable from preceding code
+..\src\app\usr\main.c(430): warning:  #177-D: variable "j" was declared but never referenced
+..\src\app\usr\main.c(439): warning:  #550-D: variable "timer_1" was set but never used
+compiling mem_str.c...
+compiling p_sys.c...
+compiling hc595.c...
+compiling bsp_dev_id.c...
+compiling process_led.c...
+compiling process_net.c...
+compiling process_ledscreen.c...
+..\src\app\process\process_ledscreen.c(33): warning:  #177-D: variable "i" was declared but never referenced
+..\src\app\process\process_ledscreen.c(33): warning:  #177-D: variable "j" was declared but never referenced
+..\src\app\process\process_ledscreen.c(33): warning:  #177-D: variable "k" was declared but never referenced
+linking...
+Program Size: Code=49528 RO-data=1188 RW-data=1168 ZI-data=80960  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 6 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.293V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling main.c...
+..\src\app\usr\main.c(416): error:  #65: expected a ";"
+..\src\app\usr\main.c(419): error:  #513: a value of type "const uint8 *" cannot be assigned to an entity of type "uint8 *"
+..\src\app\usr\main.c(623): warning:  #128-D: loop is not reachable from preceding code
+..\src\app\usr\main.c(438): warning:  #177-D: variable "j" was declared but never referenced
+..\src\app\usr\main.c(447): warning:  #550-D: variable "timer_1" was set but never used
+Target not created
+Build target 'Target 1'
+compiling main.c...
+..\src\app\usr\main.c(419): error:  #513: a value of type "const uint8 *" cannot be assigned to an entity of type "uint8 *"
+..\src\app\usr\main.c(623): warning:  #128-D: loop is not reachable from preceding code
+..\src\app\usr\main.c(438): warning:  #177-D: variable "j" was declared but never referenced
+..\src\app\usr\main.c(447): warning:  #550-D: variable "timer_1" was set but never used
+Target not created
+Build target 'Target 1'
+compiling main.c...
+..\src\app\usr\main.c(623): warning:  #128-D: loop is not reachable from preceding code
+..\src\app\usr\main.c(438): warning:  #177-D: variable "j" was declared but never referenced
+..\src\app\usr\main.c(447): warning:  #550-D: variable "timer_1" was set but never used
+linking...
+Program Size: Code=49568 RO-data=1596 RW-data=1168 ZI-data=80960  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+..\src\app\usr\main.c(623): warning:  #128-D: loop is not reachable from preceding code
+..\src\app\usr\main.c(438): warning:  #177-D: variable "j" was declared but never referenced
+..\src\app\usr\main.c(447): warning:  #550-D: variable "timer_1" was set but never used
+linking...
+Program Size: Code=49568 RO-data=1916 RW-data=848 ZI-data=80960  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 3 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.293V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling main.c...
+..\src\app\usr\main.c(623): warning:  #128-D: loop is not reachable from preceding code
+..\src\app\usr\main.c(438): warning:  #177-D: variable "j" was declared but never referenced
+..\src\app\usr\main.c(447): warning:  #550-D: variable "timer_1" was set but never used
+linking...
+Program Size: Code=49568 RO-data=1916 RW-data=848 ZI-data=80960  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 3 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.293V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling main.c...
+..\src\app\usr\main.c(626): warning:  #128-D: loop is not reachable from preceding code
+..\src\app\usr\main.c(441): warning:  #177-D: variable "j" was declared but never referenced
+..\src\app\usr\main.c(450): warning:  #550-D: variable "timer_1" was set but never used
+linking...
+Program Size: Code=49572 RO-data=1916 RW-data=848 ZI-data=80960  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 3 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.293V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling main.c...
+..\src\app\usr\main.c(626): warning:  #128-D: loop is not reachable from preceding code
+..\src\app\usr\main.c(441): warning:  #177-D: variable "j" was declared but never referenced
+..\src\app\usr\main.c(450): warning:  #550-D: variable "timer_1" was set but never used
+linking...
+Program Size: Code=49572 RO-data=1596 RW-data=1168 ZI-data=80960  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 3 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.293V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling main.c...
+..\src\app\usr\main.c(626): warning:  #128-D: loop is not reachable from preceding code
+..\src\app\usr\main.c(441): warning:  #177-D: variable "j" was declared but never referenced
+..\src\app\usr\main.c(450): warning:  #550-D: variable "timer_1" was set but never used
+linking...
+Program Size: Code=49568 RO-data=1596 RW-data=1168 ZI-data=80960  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 3 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.293V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling main.c...
+..\src\app\usr\main.c(626): warning:  #128-D: loop is not reachable from preceding code
+..\src\app\usr\main.c(441): warning:  #177-D: variable "j" was declared but never referenced
+..\src\app\usr\main.c(450): warning:  #550-D: variable "timer_1" was set but never used
+linking...
+Program Size: Code=49572 RO-data=1596 RW-data=1168 ZI-data=80960  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 3 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.293V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling main.c...
+..\src\app\usr\main.c(422): warning:  #111-D: statement is unreachable
+..\src\app\usr\main.c(627): warning:  #128-D: loop is not reachable from preceding code
+..\src\app\usr\main.c(442): warning:  #177-D: variable "j" was declared but never referenced
+..\src\app\usr\main.c(451): warning:  #550-D: variable "timer_1" was set but never used
+linking...
+Program Size: Code=49528 RO-data=1188 RW-data=1168 ZI-data=80960  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 4 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.293V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling main.c...
+..\src\app\usr\main.c(422): warning:  #111-D: statement is unreachable
+..\src\app\usr\main.c(627): warning:  #128-D: loop is not reachable from preceding code
+..\src\app\usr\main.c(442): warning:  #177-D: variable "j" was declared but never referenced
+..\src\app\usr\main.c(451): warning:  #550-D: variable "timer_1" was set but never used
+linking...
+Program Size: Code=49528 RO-data=1188 RW-data=1168 ZI-data=80960  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+..\src\app\usr\main.c(422): warning:  #111-D: statement is unreachable
+..\src\app\usr\main.c(627): warning:  #128-D: loop is not reachable from preceding code
+..\src\app\usr\main.c(442): warning:  #177-D: variable "j" was declared but never referenced
+..\src\app\usr\main.c(451): warning:  #550-D: variable "timer_1" was set but never used
+compiling mem_str.c...
+compiling p_sys.c...
+compiling hc595.c...
+compiling MyApp.c...
+compiling MyAudio.c...
+compiling MyAudioSample.c...
+compiling MyBoard.c...
+compiling MyCommander.c...
+compiling MyEthernet.c...
+compiling MyFlash.c...
+compiling MyHttpd.c...
+..\src\driver\drv_bsp\MyHttpd.c(82): warning:  #177-D: function "http_state_free" was declared but never referenced
+compiling MyI2c.c...
+compiling MyI2s.c...
+compiling MyLwip.c...
+compiling MyMiscFunc.c...
+compiling MyNet.c...
+compiling MyProtocol.c...
+compiling MyStorage.c...
+compiling MySwitch.c...
+compiling MyTimer.c...
+compiling stm32f2xx_it.c...
+compiling bsp_dev_id.c...
+compiling core_cm3.c...
+assembling startup_stm32f2xx.s...
+compiling system_stm32f2xx.c...
+compiling stm32f2x7_eth.c...
+..\src\driver\drv_ether\stm32f2x7_eth.c(273): warning:  #177-D: variable "RegValue" was declared but never referenced
+compiling api_lib.c...
+compiling api_msg.c...
+compiling err.c...
+compiling netbuf.c...
+compiling netdb.c...
+compiling netifapi.c...
+compiling sockets.c...
+compiling tcpip.c...
+compiling init.c...
+compiling mem.c...
+..\src\driver\drv_lwip_v1.3.2\src\core\mem.c(184): warning:  #550-D: variable "mem_sem" was set but never used
+compiling memp.c...
+compiling netif.c...
+compiling pbuf.c...
+compiling raw.c...
+compiling stats.c...
+compiling sys.c...
+compiling tcp.c...
+compiling tcp_in.c...
+compiling tcp_out.c...
+..\src\driver\drv_lwip_v1.3.2\src\core\tcp_out.c(465): warning:  #550-D: variable "tcphdr" was set but never used
+..\src\driver\drv_lwip_v1.3.2\src\core\tcp_out.c(935): warning:  #550-D: variable "tcphdr" was set but never used
+compiling udp.c...
+compiling autoip.c...
+compiling icmp.c...
+compiling igmp.c...
+compiling inet.c...
+compiling inet_chksum.c...
+compiling ip.c...
+compiling ip_addr.c...
+compiling ip_frag.c...
+compiling etharp.c...
+compiling loopif.c...
+compiling slipif.c...
+compiling dhcp.c...
+compiling ethernetif.c...
+compiling misc.c...
+compiling stm32f2xx_dbgmcu.c...
+compiling stm32f2xx_dma.c...
+compiling stm32f2xx_exti.c...
+compiling stm32f2xx_flash.c...
+compiling stm32f2xx_gpio.c...
+compiling stm32f2xx_i2c.c...
+compiling stm32f2xx_pwr.c...
+compiling stm32f2xx_rcc.c...
+compiling stm32f2xx_spi.c...
+compiling stm32f2xx_syscfg.c...
+compiling stm32f2xx_tim.c...
+compiling stm32f2xx_usart.c...
+compiling process_led.c...
+compiling process_net.c...
+compiling process_ledscreen.c...
+..\src\app\process\process_ledscreen.c(33): warning:  #177-D: variable "i" was declared but never referenced
+..\src\app\process\process_ledscreen.c(33): warning:  #177-D: variable "j" was declared but never referenced
+..\src\app\process\process_ledscreen.c(33): warning:  #177-D: variable "k" was declared but never referenced
+linking...
+Program Size: Code=49528 RO-data=1188 RW-data=1168 ZI-data=80960  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 12 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.293V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling main.c...
+..\src\app\usr\main.c(628): warning:  #128-D: loop is not reachable from preceding code
+..\src\app\usr\main.c(443): warning:  #177-D: variable "j" was declared but never referenced
+..\src\app\usr\main.c(452): warning:  #550-D: variable "timer_1" was set but never used
+linking...
+Program Size: Code=49528 RO-data=1188 RW-data=1576 ZI-data=80960  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 3 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.293V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling main.c...
+..\src\app\usr\main.c(416): error:  #165: too few arguments in function call
+..\src\app\usr\main.c(416): error:  #18: expected a ")"
+..\src\app\usr\main.c(416): error:  #29: expected an expression
+..\src\app\usr\main.c(412): warning:  #177-D: variable "src" was declared but never referenced
+..\src\app\usr\main.c(628): warning:  #128-D: loop is not reachable from preceding code
+..\src\app\usr\main.c(443): warning:  #177-D: variable "j" was declared but never referenced
+..\src\app\usr\main.c(452): warning:  #550-D: variable "timer_1" was set but never used
+Target not created
+Build target 'Target 1'
+compiling main.c...
+..\src\app\usr\main.c(628): warning:  #128-D: loop is not reachable from preceding code
+..\src\app\usr\main.c(443): warning:  #177-D: variable "j" was declared but never referenced
+..\src\app\usr\main.c(452): warning:  #550-D: variable "timer_1" was set but never used
+linking...
+Program Size: Code=49528 RO-data=1188 RW-data=1576 ZI-data=80960  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 3 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.293V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling main.c...
+..\src\app\usr\main.c(417): error:  #65: expected a ";"
+..\src\app\usr\main.c(411): warning:  #550-D: variable "dst" was set but never used
+..\src\app\usr\main.c(412): warning:  #177-D: variable "src" was declared but never referenced
+..\src\app\usr\main.c(629): warning:  #128-D: loop is not reachable from preceding code
+..\src\app\usr\main.c(444): warning:  #177-D: variable "j" was declared but never referenced
+..\src\app\usr\main.c(453): warning:  #550-D: variable "timer_1" was set but never used
+Target not created
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+_____^
+*** error 56: cannot open file
+Build target 'Target 1'
+compiling main.c...
+..\src\app\usr\main.c(629): warning:  #128-D: loop is not reachable from preceding code
+..\src\app\usr\main.c(444): warning:  #177-D: variable "j" was declared but never referenced
+..\src\app\usr\main.c(453): warning:  #550-D: variable "timer_1" was set but never used
+linking...
+Program Size: Code=49532 RO-data=1188 RW-data=1576 ZI-data=80960  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 3 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.293V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling main.c...
+..\src\app\usr\main.c(412): error:  #144: a value of type "const uint8 *" cannot be used to initialize an entity of type "uint8 *"
+..\src\app\usr\main.c(629): warning:  #128-D: loop is not reachable from preceding code
+..\src\app\usr\main.c(444): warning:  #177-D: variable "j" was declared but never referenced
+..\src\app\usr\main.c(453): warning:  #550-D: variable "timer_1" was set but never used
+Target not created
+Build target 'Target 1'
+compiling main.c...
+..\src\app\usr\main.c(629): warning:  #128-D: loop is not reachable from preceding code
+..\src\app\usr\main.c(444): warning:  #177-D: variable "j" was declared but never referenced
+..\src\app\usr\main.c(453): warning:  #550-D: variable "timer_1" was set but never used
+linking...
+Program Size: Code=49532 RO-data=1916 RW-data=848 ZI-data=80960  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 3 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.293V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling main.c...
+..\src\app\usr\main.c(426): error:  #31: expression must have integral type
+..\src\app\usr\main.c(629): warning:  #128-D: loop is not reachable from preceding code
+..\src\app\usr\main.c(444): warning:  #177-D: variable "j" was declared but never referenced
+..\src\app\usr\main.c(453): warning:  #550-D: variable "timer_1" was set but never used
+Target not created
+Build target 'Target 1'
+compiling main.c...
+..\src\app\usr\main.c(629): warning:  #128-D: loop is not reachable from preceding code
+..\src\app\usr\main.c(444): warning:  #177-D: variable "j" was declared but never referenced
+..\src\app\usr\main.c(453): warning:  #550-D: variable "timer_1" was set but never used
+linking...
+Program Size: Code=49572 RO-data=1916 RW-data=848 ZI-data=80960  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 3 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.293V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling main.c...
+..\src\app\usr\main.c(629): warning:  #128-D: loop is not reachable from preceding code
+..\src\app\usr\main.c(444): warning:  #177-D: variable "j" was declared but never referenced
+..\src\app\usr\main.c(453): warning:  #550-D: variable "timer_1" was set but never used
+linking...
+Program Size: Code=49572 RO-data=1916 RW-data=848 ZI-data=80960  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 3 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.293V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling process_ledscreen.c...
+..\src\app\process\process_ledscreen.c(26): warning:  #177-D: variable "k" was declared but never referenced
+linking...
+Program Size: Code=49808 RO-data=1916 RW-data=848 ZI-data=80960  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 1 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.293V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling process_ledscreen.c...
+..\src\app\process\process_ledscreen.c(26): warning:  #177-D: variable "k" was declared but never referenced
+..\src\app\process\process_ledscreen.c(154): warning:  #223-D: function "clr_led_buf" declared implicitly
+linking...
+Program Size: Code=49920 RO-data=1916 RW-data=864 ZI-data=81000  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: Code=49920 RO-data=1916 RW-data=864 ZI-data=81000  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+..\src\app\usr\main.c(629): warning:  #128-D: loop is not reachable from preceding code
+..\src\app\usr\main.c(444): warning:  #177-D: variable "j" was declared but never referenced
+..\src\app\usr\main.c(453): warning:  #550-D: variable "timer_1" was set but never used
+compiling mem_str.c...
+compiling p_sys.c...
+compiling hc595.c...
+compiling bsp_dev_id.c...
+compiling process_led.c...
+compiling process_net.c...
+compiling process_ledscreen.c...
+..\src\app\process\process_ledscreen.c(26): warning:  #177-D: variable "k" was declared but never referenced
+linking...
+Program Size: Code=49904 RO-data=1916 RW-data=864 ZI-data=81000  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling hc595.c...
+linking...
+Program Size: Code=49892 RO-data=1916 RW-data=864 ZI-data=81000  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 0 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+Build target 'Target 1'
+linking...
+Program Size: Code=49892 RO-data=1916 RW-data=864 ZI-data=81000  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 0 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.287V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling hc595.c...
+linking...
+Program Size: Code=49892 RO-data=1916 RW-data=864 ZI-data=81000  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 0 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.287V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling hc595.c...
+linking...
+Program Size: Code=49932 RO-data=1916 RW-data=864 ZI-data=81000  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 0 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.293V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling hc595.c...
+linking...
+Program Size: Code=49904 RO-data=1916 RW-data=864 ZI-data=81000  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 0 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.293V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling hc595.c...
+compiling process_ledscreen.c...
+..\src\app\process\process_ledscreen.c(26): warning:  #177-D: variable "k" was declared but never referenced
+linking...
+Program Size: Code=49904 RO-data=1916 RW-data=864 ZI-data=81000  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 1 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.293V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling process_ledscreen.c...
+..\src\app\process\process_ledscreen.c(26): warning:  #177-D: variable "k" was declared but never referenced
+linking...
+Program Size: Code=49904 RO-data=1916 RW-data=864 ZI-data=81000  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 1 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.293V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling process_ledscreen.c...
+..\src\app\process\process_ledscreen.c(26): warning:  #177-D: variable "k" was declared but never referenced
+linking...
+Program Size: Code=49904 RO-data=1916 RW-data=864 ZI-data=81000  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 1 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.293V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling process_ledscreen.c...
+..\src\app\process\process_ledscreen.c(26): warning:  #177-D: variable "k" was declared but never referenced
+linking...
+Program Size: Code=49904 RO-data=1916 RW-data=864 ZI-data=81000  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 1 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.293V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.293V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling process_ledscreen.c...
+..\src\app\process\process_ledscreen.c(26): warning:  #177-D: variable "k" was declared but never referenced
+linking...
+Program Size: Code=49904 RO-data=1916 RW-data=864 ZI-data=81000  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 1 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.293V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling process_ledscreen.c...
+..\src\app\process\process_ledscreen.c(26): warning:  #177-D: variable "k" was declared but never referenced
+linking...
+Program Size: Code=49904 RO-data=1916 RW-data=864 ZI-data=81000  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 1 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.293V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling process_ledscreen.c...
+..\src\app\process\process_ledscreen.c(26): warning:  #177-D: variable "k" was declared but never referenced
+linking...
+Program Size: Code=49904 RO-data=1916 RW-data=864 ZI-data=81000  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 1 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.293V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling process_ledscreen.c...
+..\src\app\process\process_ledscreen.c(26): warning:  #177-D: variable "k" was declared but never referenced
+linking...
+Program Size: Code=49904 RO-data=1916 RW-data=864 ZI-data=81000  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 1 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.293V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling process_ledscreen.c...
+linking...
+Program Size: Code=49596 RO-data=1916 RW-data=860 ZI-data=80996  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 0 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.293V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling process_ledscreen.c...
+linking...
+Program Size: Code=49596 RO-data=1916 RW-data=860 ZI-data=80996  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 0 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.293V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling process_ledscreen.c...
+linking...
+Program Size: Code=49596 RO-data=1916 RW-data=860 ZI-data=80996  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 0 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.293V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling process_ledscreen.c...
+..\src\app\process\process_ledscreen.c(27): warning:  #177-D: variable "k" was declared but never referenced
+linking...
+Program Size: Code=49904 RO-data=1916 RW-data=864 ZI-data=81000  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 1 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.293V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling main.c...
+..\src\app\usr\main.c(365): warning:  #223-D: function "test_fill_ledbuf" declared implicitly
+..\src\app\usr\main.c(438): warning:  #128-D: loop is not reachable from preceding code
+..\src\app\usr\main.c(249): warning:  #177-D: variable "j" was declared but never referenced
+..\src\app\usr\main.c(258): warning:  #550-D: variable "timer_1" was set but never used
+..\src\app\usr\main.c(259): warning:  #550-D: variable "col" was set but never used
+compiling mem_str.c...
+compiling p_sys.c...
+compiling hc595.c...
+compiling bsp_dev_id.c...
+compiling process_led.c...
+compiling process_net.c...
+compiling process_ledscreen.c...
+..\src\app\process\process_ledscreen.c(27): warning:  #177-D: variable "k" was declared but never referenced
+linking...
+Program Size: Code=49960 RO-data=1844 RW-data=864 ZI-data=81000  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+..\src\app\usr\main.c(438): warning:  #128-D: loop is not reachable from preceding code
+..\src\app\usr\main.c(249): warning:  #177-D: variable "j" was declared but never referenced
+..\src\app\usr\main.c(258): warning:  #550-D: variable "timer_1" was set but never used
+..\src\app\usr\main.c(259): warning:  #177-D: variable "col" was declared but never referenced
+linking...
+Program Size: Code=49956 RO-data=1844 RW-data=864 ZI-data=81000  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: Code=49956 RO-data=1844 RW-data=864 ZI-data=81000  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 0 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.293V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling main.c...
+..\src\app\usr\main.c(438): warning:  #128-D: loop is not reachable from preceding code
+..\src\app\usr\main.c(249): warning:  #177-D: variable "j" was declared but never referenced
+..\src\app\usr\main.c(258): warning:  #550-D: variable "timer_1" was set but never used
+..\src\app\usr\main.c(259): warning:  #177-D: variable "col" was declared but never referenced
+compiling hc595.c...
+compiling process_ledscreen.c...
+..\src\app\process\process_ledscreen.c(27): warning:  #177-D: variable "k" was declared but never referenced
+linking...
+Program Size: Code=50004 RO-data=1816 RW-data=864 ZI-data=81000  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 5 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.293V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling process_ledscreen.c...
+..\src\app\process\process_ledscreen.c(27): warning:  #177-D: variable "k" was declared but never referenced
+linking...
+Program Size: Code=50008 RO-data=1816 RW-data=864 ZI-data=81000  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 1 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.287V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling process_ledscreen.c...
+..\src\app\process\process_ledscreen.c(27): warning:  #177-D: variable "k" was declared but never referenced
+linking...
+Program Size: Code=50016 RO-data=1816 RW-data=868 ZI-data=80996  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: Code=50016 RO-data=1816 RW-data=868 ZI-data=80996  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 0 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.293V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling process_ledscreen.c...
+..\src\app\process\process_ledscreen.c(27): warning:  #177-D: variable "k" was declared but never referenced
+linking...
+Program Size: Code=50008 RO-data=1816 RW-data=868 ZI-data=80996  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 1 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.287V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling process_ledscreen.c...
+..\src\app\process\process_ledscreen.c(27): warning:  #177-D: variable "k" was declared but never referenced
+linking...
+Program Size: Code=50040 RO-data=1816 RW-data=868 ZI-data=80996  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 1 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.293V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling process_ledscreen.c...
+..\src\app\process\process_ledscreen.c(27): warning:  #177-D: variable "k" was declared but never referenced
+linking...
+Program Size: Code=50040 RO-data=1816 RW-data=868 ZI-data=80996  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: Code=50040 RO-data=1816 RW-data=868 ZI-data=80996  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 0 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.293V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling process_ledscreen.c...
+..\src\app\process\process_ledscreen.c(27): warning:  #177-D: variable "k" was declared but never referenced
+linking...
+Program Size: Code=50040 RO-data=1816 RW-data=868 ZI-data=80996  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 1 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.293V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.293V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling process_ledscreen.c...
+..\src\app\process\process_ledscreen.c(27): warning:  #177-D: variable "k" was declared but never referenced
+..\src\app\process\process_ledscreen.c(465): warning:  #177-D: variable "cnt" was declared but never referenced
+linking...
+Program Size: Code=50016 RO-data=1816 RW-data=868 ZI-data=80996  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling process_ledscreen.c...
+..\src\app\process\process_ledscreen.c(27): warning:  #177-D: variable "k" was declared but never referenced
+linking...
+Program Size: Code=50044 RO-data=1816 RW-data=868 ZI-data=80996  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 1 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.293V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling process_ledscreen.c...
+..\src\app\process\process_ledscreen.c(27): warning:  #177-D: variable "k" was declared but never referenced
+linking...
+Program Size: Code=50044 RO-data=1816 RW-data=868 ZI-data=80996  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 1 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.293V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling process_ledscreen.c...
+..\src\app\process\process_ledscreen.c(27): warning:  #177-D: variable "k" was declared but never referenced
+..\src\app\process\process_ledscreen.c(465): warning:  #177-D: variable "cnt" was declared but never referenced
+linking...
+Program Size: Code=50016 RO-data=1816 RW-data=868 ZI-data=80996  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 2 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.293V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling process_ledscreen.c...
+..\src\app\process\process_ledscreen.c(27): warning:  #177-D: variable "k" was declared but never referenced
+..\src\app\process\process_ledscreen.c(488): warning:  #550-D: variable "col" was set but never used
+..\src\app\process\process_ledscreen.c(491): warning:  #177-D: variable "cnt" was declared but never referenced
+linking...
+Program Size: Code=50040 RO-data=1816 RW-data=896 ZI-data=80976  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 3 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.287V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling process_ledscreen.c...
+..\src\app\process\process_ledscreen.c(27): warning:  #177-D: variable "k" was declared but never referenced
+..\src\app\process\process_ledscreen.c(488): warning:  #550-D: variable "col" was set but never used
+..\src\app\process\process_ledscreen.c(491): warning:  #177-D: variable "cnt" was declared but never referenced
+linking...
+Program Size: Code=50036 RO-data=1816 RW-data=896 ZI-data=80976  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 3 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.287V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling main.c...
+..\src\app\usr\main.c(438): warning:  #128-D: loop is not reachable from preceding code
+..\src\app\usr\main.c(249): warning:  #177-D: variable "j" was declared but never referenced
+..\src\app\usr\main.c(258): warning:  #550-D: variable "timer_1" was set but never used
+..\src\app\usr\main.c(259): warning:  #177-D: variable "col" was declared but never referenced
+compiling mem_str.c...
+compiling p_sys.c...
+compiling hc595.c...
+compiling bsp_dev_id.c...
+compiling process_led.c...
+compiling process_net.c...
+compiling process_ledscreen.c...
+..\src\app\process\process_ledscreen.c(33): warning:  #177-D: variable "k" was declared but never referenced
+..\src\app\process\process_ledscreen.c(494): warning:  #550-D: variable "col" was set but never used
+..\src\app\process\process_ledscreen.c(497): warning:  #177-D: variable "cnt" was declared but never referenced
+linking...
+Program Size: Code=50068 RO-data=1816 RW-data=904 ZI-data=80976  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 7 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.287V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling process_ledscreen.c...
+..\src\app\process\process_ledscreen.c(33): warning:  #177-D: variable "k" was declared but never referenced
+..\src\app\process\process_ledscreen.c(494): warning:  #550-D: variable "col" was set but never used
+..\src\app\process\process_ledscreen.c(497): warning:  #177-D: variable "cnt" was declared but never referenced
+linking...
+Program Size: Code=50068 RO-data=1816 RW-data=904 ZI-data=80976  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 3 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.293V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling process_ledscreen.c...
+..\src\app\process\process_ledscreen.c(33): warning:  #177-D: variable "k" was declared but never referenced
+..\src\app\process\process_ledscreen.c(494): warning:  #550-D: variable "col" was set but never used
+..\src\app\process\process_ledscreen.c(497): warning:  #177-D: variable "cnt" was declared but never referenced
+linking...
+Program Size: Code=50068 RO-data=1816 RW-data=904 ZI-data=80976  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 3 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.293V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling process_ledscreen.c...
+..\src\app\process\process_ledscreen.c(33): warning:  #177-D: variable "k" was declared but never referenced
+..\src\app\process\process_ledscreen.c(515): warning:  #177-D: variable "col" was declared but never referenced
+..\src\app\process\process_ledscreen.c(560): warning:  #177-D: variable "col" was declared but never referenced
+..\src\app\process\process_ledscreen.c(563): warning:  #177-D: variable "cnt" was declared but never referenced
+linking...
+Program Size: Code=50340 RO-data=1816 RW-data=912 ZI-data=80984  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 4 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.293V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling process_ledscreen.c...
+..\src\app\process\process_ledscreen.c(33): warning:  #177-D: variable "k" was declared but never referenced
+..\src\app\process\process_ledscreen.c(515): warning:  #177-D: variable "col" was declared but never referenced
+..\src\app\process\process_ledscreen.c(560): warning:  #177-D: variable "col" was declared but never referenced
+..\src\app\process\process_ledscreen.c(563): warning:  #177-D: variable "cnt" was declared but never referenced
+linking...
+Program Size: Code=50348 RO-data=1816 RW-data=912 ZI-data=80984  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 4 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.293V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling process_ledscreen.c...
+..\src\app\process\process_ledscreen.c(33): warning:  #177-D: variable "k" was declared but never referenced
+..\src\app\process\process_ledscreen.c(515): warning:  #177-D: variable "col" was declared but never referenced
+..\src\app\process\process_ledscreen.c(560): warning:  #177-D: variable "col" was declared but never referenced
+..\src\app\process\process_ledscreen.c(563): warning:  #177-D: variable "cnt" was declared but never referenced
+linking...
+Program Size: Code=50352 RO-data=1816 RW-data=912 ZI-data=80984  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 4 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.293V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling process_ledscreen.c...
+..\src\app\process\process_ledscreen.c(33): warning:  #177-D: variable "k" was declared but never referenced
+..\src\app\process\process_ledscreen.c(515): warning:  #177-D: variable "col" was declared but never referenced
+..\src\app\process\process_ledscreen.c(560): warning:  #177-D: variable "col" was declared but never referenced
+..\src\app\process\process_ledscreen.c(563): warning:  #177-D: variable "cnt" was declared but never referenced
+linking...
+Program Size: Code=50360 RO-data=1816 RW-data=912 ZI-data=80984  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 4 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.293V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling main.c...
+..\src\app\usr\main.c(438): warning:  #128-D: loop is not reachable from preceding code
+..\src\app\usr\main.c(249): warning:  #177-D: variable "j" was declared but never referenced
+..\src\app\usr\main.c(258): warning:  #550-D: variable "timer_1" was set but never used
+..\src\app\usr\main.c(259): warning:  #177-D: variable "col" was declared but never referenced
+compiling mem_str.c...
+compiling p_sys.c...
+compiling hc595.c...
+compiling MyApp.c...
+compiling MyAudio.c...
+compiling MyBoard.c...
+compiling MyCommander.c...
+compiling MyEthernet.c...
+compiling MyFlash.c...
+compiling MyHttpd.c...
+..\src\driver\drv_bsp\MyHttpd.c(82): warning:  #177-D: function "http_state_free" was declared but never referenced
+compiling MyI2c.c...
+compiling MyI2s.c...
+compiling MyLwip.c...
+compiling MyMiscFunc.c...
+compiling MyNet.c...
+compiling MyProtocol.c...
+compiling MyStorage.c...
+compiling MySwitch.c...
+compiling MyTimer.c...
+compiling stm32f2xx_it.c...
+compiling bsp_dev_id.c...
+compiling ethernetif.c...
+compiling process_led.c...
+compiling process_net.c...
+compiling process_ledscreen.c...
+..\src\app\process\process_ledscreen.c(33): warning:  #177-D: variable "k" was declared but never referenced
+..\src\app\process\process_ledscreen.c(515): warning:  #177-D: variable "col" was declared but never referenced
+..\src\app\process\process_ledscreen.c(560): warning:  #177-D: variable "col" was declared but never referenced
+..\src\app\process\process_ledscreen.c(563): warning:  #177-D: variable "cnt" was declared but never referenced
+linking...
+Program Size: Code=50424 RO-data=1816 RW-data=920 ZI-data=80984  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 9 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.293V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling main.c...
+..\src\app\usr\main.c(249): warning:  #177-D: variable "i" was declared but never referenced
+..\src\app\usr\main.c(249): warning:  #177-D: variable "j" was declared but never referenced
+..\src\app\usr\main.c(258): warning:  #550-D: variable "timer_1" was set but never used
+..\src\app\usr\main.c(259): warning:  #177-D: variable "col" was declared but never referenced
+compiling process_ledscreen.c...
+..\src\app\process\process_ledscreen.c(33): warning:  #177-D: variable "k" was declared but never referenced
+..\src\app\process\process_ledscreen.c(515): warning:  #177-D: variable "col" was declared but never referenced
+..\src\app\process\process_ledscreen.c(560): warning:  #177-D: variable "col" was declared but never referenced
+..\src\app\process\process_ledscreen.c(563): warning:  #177-D: variable "cnt" was declared but never referenced
+linking...
+Program Size: Code=50488 RO-data=1816 RW-data=920 ZI-data=80984  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 8 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.287V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling main.c...
+..\src\app\usr\main.c(249): warning:  #177-D: variable "i" was declared but never referenced
+..\src\app\usr\main.c(249): warning:  #177-D: variable "j" was declared but never referenced
+..\src\app\usr\main.c(258): warning:  #550-D: variable "timer_1" was set but never used
+..\src\app\usr\main.c(259): warning:  #177-D: variable "col" was declared but never referenced
+compiling mem_str.c...
+compiling p_sys.c...
+compiling hc595.c...
+compiling MyApp.c...
+compiling MyAudio.c...
+compiling MyBoard.c...
+compiling MyCommander.c...
+compiling MyEthernet.c...
+compiling MyFlash.c...
+compiling MyHttpd.c...
+..\src\driver\drv_bsp\MyHttpd.c(82): warning:  #177-D: function "http_state_free" was declared but never referenced
+compiling MyI2c.c...
+compiling MyI2s.c...
+compiling MyLwip.c...
+compiling MyMiscFunc.c...
+compiling MyNet.c...
+compiling MyProtocol.c...
+compiling MyStorage.c...
+compiling MySwitch.c...
+compiling MyTimer.c...
+compiling stm32f2xx_it.c...
+compiling bsp_dev_id.c...
+compiling ethernetif.c...
+compiling process_led.c...
+compiling process_net.c...
+compiling process_ledscreen.c...
+..\src\app\process\process_ledscreen.c(33): warning:  #177-D: variable "k" was declared but never referenced
+..\src\app\process\process_ledscreen.c(515): warning:  #177-D: variable "col" was declared but never referenced
+..\src\app\process\process_ledscreen.c(560): warning:  #177-D: variable "col" was declared but never referenced
+..\src\app\process\process_ledscreen.c(563): warning:  #177-D: variable "cnt" was declared but never referenced
+linking...
+Program Size: Code=50488 RO-data=1816 RW-data=920 ZI-data=80984  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 9 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+Build target 'Target 1'
+linking...
+Program Size: Code=50488 RO-data=1816 RW-data=920 ZI-data=80984  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 0 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.287V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling main.c...
+..\src\app\usr\main.c(249): warning:  #177-D: variable "i" was declared but never referenced
+..\src\app\usr\main.c(249): warning:  #177-D: variable "j" was declared but never referenced
+..\src\app\usr\main.c(258): warning:  #550-D: variable "timer_1" was set but never used
+..\src\app\usr\main.c(259): warning:  #177-D: variable "col" was declared but never referenced
+compiling mem_str.c...
+compiling p_sys.c...
+compiling hc595.c...
+compiling MyApp.c...
+compiling MyAudio.c...
+compiling MyBoard.c...
+compiling MyCommander.c...
+compiling MyEthernet.c...
+compiling MyFlash.c...
+compiling MyHttpd.c...
+..\src\driver\drv_bsp\MyHttpd.c(82): warning:  #177-D: function "http_state_free" was declared but never referenced
+compiling MyI2c.c...
+compiling MyI2s.c...
+compiling MyLwip.c...
+compiling MyMiscFunc.c...
+compiling MyNet.c...
+compiling MyProtocol.c...
+compiling MyStorage.c...
+compiling MySwitch.c...
+compiling MyTimer.c...
+compiling stm32f2xx_it.c...
+compiling bsp_dev_id.c...
+compiling ethernetif.c...
+compiling process_led.c...
+compiling process_net.c...
+compiling process_ledscreen.c...
+..\src\app\process\process_ledscreen.c(33): warning:  #177-D: variable "k" was declared but never referenced
+..\src\app\process\process_ledscreen.c(515): warning:  #177-D: variable "col" was declared but never referenced
+..\src\app\process\process_ledscreen.c(560): warning:  #177-D: variable "col" was declared but never referenced
+..\src\app\process\process_ledscreen.c(563): warning:  #177-D: variable "cnt" was declared but never referenced
+linking...
+Program Size: Code=50488 RO-data=1816 RW-data=920 ZI-data=80984  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 9 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.293V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+assembling startup_stm32f2xx.s...
+..\src\driver\drv_CMIS\startup_stm32f2xx.s - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling process_ledscreen.c...
+..\src\app\process\process_ledscreen.c(33): warning:  #177-D: variable "k" was declared but never referenced
+..\src\app\process\process_ledscreen.c(516): warning:  #177-D: variable "col" was declared but never referenced
+..\src\app\process\process_ledscreen.c(554): warning:  #177-D: variable "col" was declared but never referenced
+..\src\app\process\process_ledscreen.c(555): warning:  #177-D: variable "i" was declared but never referenced
+..\src\app\process\process_ledscreen.c(610): error:  #65: expected a ";"
+..\src\app\process\process_ledscreen.c(627): warning:  #12-D: parsing restarts here after previous syntax error
+..\src\app\process\process_ledscreen.c(642): error:  #20: identifier "flag_mode" is undefined
+..\src\app\process\process_ledscreen.c(650): error:  #20: identifier "mode_index_tbl" is undefined
+..\src\app\process\process_ledscreen.c(653): warning:  #223-D: function "set_dispmode" declared implicitly
+..\src\app\process\process_ledscreen.c(634): warning:  #177-D: variable "col" was declared but never referenced
+..\src\app\process\process_ledscreen.c(637): warning:  #177-D: variable "cnt" was declared but never referenced
+Target not created
+Build target 'Target 1'
+compiling process_ledscreen.c...
+..\src\app\process\process_ledscreen.c(33): warning:  #177-D: variable "k" was declared but never referenced
+..\src\app\process\process_ledscreen.c(516): warning:  #177-D: variable "col" was declared but never referenced
+..\src\app\process\process_ledscreen.c(554): warning:  #177-D: variable "col" was declared but never referenced
+..\src\app\process\process_ledscreen.c(555): warning:  #177-D: variable "i" was declared but never referenced
+..\src\app\process\process_ledscreen.c(610): error:  #65: expected a ";"
+..\src\app\process\process_ledscreen.c(627): warning:  #12-D: parsing restarts here after previous syntax error
+..\src\app\process\process_ledscreen.c(642): warning:  #223-D: function "set_dispmode" declared implicitly
+..\src\app\process\process_ledscreen.c(642): error:  #20: identifier "mode_index_tbl" is undefined
+..\src\app\process\process_ledscreen.c(649): error:  #20: identifier "mode_index_tbl" is undefined
+..\src\app\process\process_ledscreen.c(652): warning:  #223-D: function "set_dispmode" declared implicitly
+..\src\app\process\process_ledscreen.c(634): warning:  #177-D: variable "col" was declared but never referenced
+..\src\app\process\process_ledscreen.c(637): warning:  #177-D: variable "cnt" was declared but never referenced
+Target not created
+Build target 'Target 1'
+compiling process_ledscreen.c...
+..\src\app\process\process_ledscreen.c(33): warning:  #177-D: variable "k" was declared but never referenced
+..\src\app\process\process_ledscreen.c(516): warning:  #177-D: variable "col" was declared but never referenced
+..\src\app\process\process_ledscreen.c(554): warning:  #177-D: variable "col" was declared but never referenced
+..\src\app\process\process_ledscreen.c(555): warning:  #177-D: variable "i" was declared but never referenced
+..\src\app\process\process_ledscreen.c(634): warning:  #177-D: variable "col" was declared but never referenced
+..\src\app\process\process_ledscreen.c(637): warning:  #177-D: variable "cnt" was declared but never referenced
+linking...
+Program Size: Code=50656 RO-data=1816 RW-data=968 ZI-data=80984  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling process_ledscreen.c...
+..\src\app\process\process_ledscreen.c(33): warning:  #177-D: variable "k" was declared but never referenced
+..\src\app\process\process_ledscreen.c(397): warning:  #177-D: variable "col_sum_roll" was declared but never referenced
+..\src\app\process\process_ledscreen.c(549): warning:  #177-D: variable "col" was declared but never referenced
+..\src\app\process\process_ledscreen.c(652): warning:  #177-D: variable "col" was declared but never referenced
+..\src\app\process\process_ledscreen.c(655): warning:  #177-D: variable "cnt" was declared but never referenced
+linking...
+Program Size: Code=50644 RO-data=1912 RW-data=968 ZI-data=80984  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 5 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.287V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling process_ledscreen.c...
+..\src\app\process\process_ledscreen.c(33): warning:  #177-D: variable "k" was declared but never referenced
+..\src\app\process\process_ledscreen.c(397): warning:  #177-D: variable "col_sum_roll" was declared but never referenced
+..\src\app\process\process_ledscreen.c(549): warning:  #177-D: variable "col" was declared but never referenced
+..\src\app\process\process_ledscreen.c(652): warning:  #177-D: variable "col" was declared but never referenced
+..\src\app\process\process_ledscreen.c(655): warning:  #177-D: variable "cnt" was declared but never referenced
+linking...
+Program Size: Code=50644 RO-data=1912 RW-data=968 ZI-data=80984  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 5 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.293V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling process_ledscreen.c...
+..\src\app\process\process_ledscreen.c(33): warning:  #177-D: variable "k" was declared but never referenced
+..\src\app\process\process_ledscreen.c(397): warning:  #177-D: variable "col_sum_roll" was declared but never referenced
+..\src\app\process\process_ledscreen.c(549): warning:  #177-D: variable "col" was declared but never referenced
+..\src\app\process\process_ledscreen.c(652): warning:  #177-D: variable "col" was declared but never referenced
+..\src\app\process\process_ledscreen.c(655): warning:  #177-D: variable "cnt" was declared but never referenced
+linking...
+Program Size: Code=50648 RO-data=1912 RW-data=968 ZI-data=80984  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 5 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: Code=50648 RO-data=1912 RW-data=968 ZI-data=80984  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 0 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.293V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling process_ledscreen.c...
+..\src\app\process\process_ledscreen.c(33): warning:  #177-D: variable "k" was declared but never referenced
+..\src\app\process\process_ledscreen.c(397): warning:  #177-D: variable "col_sum_roll" was declared but never referenced
+..\src\app\process\process_ledscreen.c(549): warning:  #177-D: variable "col" was declared but never referenced
+..\src\app\process\process_ledscreen.c(652): warning:  #177-D: variable "col" was declared but never referenced
+..\src\app\process\process_ledscreen.c(655): warning:  #177-D: variable "cnt" was declared but never referenced
+linking...
+Program Size: Code=50656 RO-data=1912 RW-data=968 ZI-data=80984  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 5 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: Code=50656 RO-data=1912 RW-data=968 ZI-data=80984  
+FromELF: creating hex file...
+".\out\dvlp_prj.axf" - 0 Error(s), 0 Warning(s).
+Load "E:\\share\\21.digitalpis-zhongdianzhan\\pro\\keil_proj\\proj\\out\\dvlp_prj.AXF" 
+* JLink Info: Device "STM32F207ZC" selected (256 KB flash, 64 KB RAM).
+Set JLink Project File to "E:\share\21.digitalpis-zhongdianzhan\pro\keil_proj\proj\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r2p0, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+**JLink Warning: Could not set S_RESET_ST
+ 
+Target info:
+------------
+Device: STM32F207ZC
+VTarget = 3.293V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.

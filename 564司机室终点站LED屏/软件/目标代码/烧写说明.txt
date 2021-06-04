@@ -1,0 +1,7 @@
+
+	iap程序位于 ADDR_FLASH_SECTOR_0,1,2,3(0x08000000--0x0801ffff)
+	app位于 0x08060000 -- 0x080fffff
+	程序正确标志位于 	ADDR_FLASH_SECTOR_5 0x08020000
+	其他存储的内容位于	ADDR_FLASH_SECTOR_6 0x08040000
+	
+	当iap程序烧写后,可以通过网口在线更新app

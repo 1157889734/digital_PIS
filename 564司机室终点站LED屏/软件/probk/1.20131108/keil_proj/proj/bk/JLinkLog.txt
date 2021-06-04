@@ -1,0 +1,15 @@
+
+T0AD8 000:358 SEGGER J-Link V4.35b (beta) Log File (0001ms, 0356ms total)
+T0AD8 000:358 DLL Compiled: Sep  2 2011 18:34:46 (0001ms, 0356ms total)
+T0AD8 000:358 Logging started @ 2013-06-27 12:28 (0001ms, 0356ms total)
+T0AD8 000:359 JLINK_SetWarnOutHandler(...) (0000ms, 0357ms total)
+T0AD8 000:359 JLINK_OpenEx(...)
+Firmware: J-Link ARM V8 compiled Sep  2 2011 17:54:36
+  ***** Error: Communication timed out: Requested 256 bytes, received 0 bytes !
+  ***** Error: Could not read Hardware version.
+Hardware: V0.00  returns "Communication timed out: Requested 256 bytes, received 0 bytes !
+Could not read Hardware version." (3010ms, 0357ms total)
+T0AD8 003:370 JLINK_Close() (0000ms, 3367ms total)
+
+  ***** API Error: API JLINK_GetIdData function called before JLINKARM_Open()
+T0AD8 003:370 Out of sync , resynchronising... (3000ms, 3367ms total)

@@ -1,0 +1,9 @@
+.\out\inet.o: lwip_v1.3.2\src\core\ipv4\inet.c
+.\out\inet.o: .\lwip_v1.3.2\src\include\lwip/opt.h
+.\out\inet.o: .\mycode\lwipopts.h
+.\out\inet.o: .\lwip_v1.3.2\src\include\lwip/debug.h
+.\out\inet.o: .\lwip_v1.3.2\src\include\lwip/arch.h
+.\out\inet.o: .\lwip_v1.3.2\port\STM32F2x7\arch/cc.h
+.\out\inet.o: .\lwip_v1.3.2\port\STM32F2x7\arch/cpu.h
+.\out\inet.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\out\inet.o: .\lwip_v1.3.2\src\include\ipv4\lwip/inet.h
